@@ -39,6 +39,40 @@ html {
 
     h2 {
       font-size: 50px;
+      color: #4b86ff;
+      border-bottom: 1px solid #4b86ff;
+      line-height: 0.1em;
+      height: 0;
+
+      div {
+        background-color: #fff;
+        display: inline;
+        padding-right: 20px;
+      }
+    }
+
+    #about-section {
+      h2 {
+        div {
+          background-color: #fff;
+        }
+      }
+    }
+
+    #values-section {
+      background-color: #f7f9ff;
+
+      #section-triangle2 {
+        width: 0;
+      	height: 0;
+      	border-bottom: 150px solid #f7f9ff;
+      }
+
+      h2 {
+        div {
+          background-color: #f7f9ff;
+        }
+      }
     }
 
     #team-section {
@@ -70,6 +104,20 @@ html {
         }
       }
     }
+
+    #contact-section {
+      background-color: #f7f9ff;
+
+      h2 {
+        div {
+          background-color: #f7f9ff;
+        }
+      }
+
+      #section-triangle3 {
+        width: 0;
+      	height: 0;
+      	border-bottom: 150px solid #f7f9ff;
       }
     }
   }
