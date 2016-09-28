@@ -6,12 +6,33 @@ html {
 
     header {
       background: linear-gradient(to right, #57d7f0, #4b86ff);
+      color: #fff;
+
+      .logo {
+        margin-top: 55px;
+        float: right;
+      }
+
+      h1 {
+        font-size: 55px;
+        margin-top: 55px;
+        margin-bottom: 0px;
+      }
+
+      p {
+        font-size: 18px;
+        margin-top: 2px;
+      }
 
       #section-triangle {
         width: 0;
       	height: 0;
-      	border-bottom: 100px solid #fff;
+      	border-bottom: 150px solid #fff;
       }
+    }
+
+    h2 {
+      font-size: 50px;
     }
 
     #team-section {
