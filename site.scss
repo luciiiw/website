@@ -1,11 +1,14 @@
 html {
   body {
-    font: Arial;
-    background: pink;
   }
   #team-section {
     img {
       width: 50px;
+      #section-triangle {
+        width: 0;
+      	height: 0;
+      	border-bottom: 100px solid #fff;
+      }
     }
   }
 }
