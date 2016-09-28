@@ -1,7 +1,30 @@
 html {
+  @font-face {
+    font-family: "Apercu";
+    src: url("assets/fonts/Apercu-Regular.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: "Apercu";
+    font-weight: bold;
+    src: url("assets/fonts/Apercu-Bold.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: "Apercu";
+    font-weight: medium;
+    src: url("assets/fonts/Apercu-Medium.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: "Apercu";
+    font-weight: light;
+    src: url("assets/fonts/Apercu-Light.otf") format("opentype");
+  }
+
   body {
     .container {
-      width: 838px;
+      width: 770px;
     }
 
     header {
@@ -28,6 +51,7 @@ html {
       p {
         font-size: 18px;
         margin-top: 2px;
+        color: #fff;
       }
 
       #section-triangle {
@@ -51,8 +75,21 @@ html {
       }
     }
 
+    h3 {
+      color: #4b86ff;
+      font-size: 20px;
+    }
+
+    p {
+      color: #807F80;
+      font-size: 18px;
+    }
+
     #about-section {
       h2 {
+        margin-top: 58px;
+        margin-bottom: 65px;
+        
         div {
           background-color: #fff;
         }
@@ -72,6 +109,10 @@ html {
         div {
           background-color: #f7f9ff;
         }
+      }
+
+      .value-icon {
+        height: 50px;
       }
     }
 
