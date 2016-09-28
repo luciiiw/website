@@ -42,10 +42,34 @@ html {
     }
 
     #team-section {
+      background-color: #fff;
+
+      h2 {
+        div {
+          background-color: #fff;
+        }
+      }
+
       img {
-        width: 130px;
-        height: 130px;
+        width: 140px;
+        height: 140px;
         border-radius: 50%;
+        display: block;
+        margin: 0 auto;
+      }
+
+      p {
+        text-align: center;
+
+        &.name {
+          margin-bottom: 0;
+        }
+
+        &.title {
+          margin-top: 0;
+        }
+      }
+    }
       }
     }
   }
