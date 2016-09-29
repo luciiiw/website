@@ -1,30 +1,30 @@
+@font-face {
+  font-family: "Apercu";
+  src: url("assets/fonts/Apercu-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Apercu";
+  font-weight: bold;
+  src: url("assets/fonts/Apercu-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Apercu";
+  font-weight: medium;
+  src: url("assets/fonts/Apercu-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Apercu";
+  font-weight: lighter;
+  src: url("assets/fonts/Apercu-Light.otf") format("opentype");
+}
+
 html {
-  @font-face {
-    font-family: "Apercu";
-    src: url("assets/fonts/Apercu-Regular.otf") format("opentype");
-  }
-
-  @font-face {
-    font-family: "Apercu";
-    font-weight: bold;
-    src: url("assets/fonts/Apercu-Bold.otf") format("opentype");
-  }
-
-  @font-face {
-    font-family: "Apercu";
-    font-weight: medium;
-    src: url("assets/fonts/Apercu-Medium.otf") format("opentype");
-  }
-
-  @font-face {
-    font-family: "Apercu";
-    font-weight: light;
-    src: url("assets/fonts/Apercu-Light.otf") format("opentype");
-  }
-
   body {
     .container {
-      width: 770px;
+      width: 70%;
     }
 
     header {
@@ -43,12 +43,16 @@ html {
       }
 
       h1 {
-        font-size: 55px;
+        font-family: "Apercu";
+        font-size: 48px;
+        font-weight: bold;
+        letter-spacing: 4.8px;
         margin-top: 55px;
         margin-bottom: 0px;
       }
 
       p {
+        font-family: "Apercu";
         font-size: 18px;
         margin-top: 2px;
         color: #fff;
@@ -62,7 +66,10 @@ html {
     }
 
     h2 {
-      font-size: 50px;
+      font-family: "Apercu";
+      font-size: 48px;
+      font-weight: bold;
+      letter-spacing: 4.8px;
       color: #4b86ff;
       border-bottom: 1px solid #4b86ff;
       line-height: 0.1em;
@@ -76,11 +83,13 @@ html {
     }
 
     h3 {
+      font-family: "Apercu";
       color: #4b86ff;
       font-size: 20px;
     }
 
     p {
+      font-family: "Apercu";
       color: #807F80;
       font-size: 18px;
     }
@@ -93,6 +102,10 @@ html {
         div {
           background-color: #fff;
         }
+      }
+
+      img {
+        margin-top: 18px;
       }
     }
 
@@ -107,7 +120,8 @@ html {
       }
 
       h2 {
-        margin-bottom: 85px;
+        margin-bottom: 55px;
+        margin-top: 80px;
 
         div {
           background-color: #f7f9ff;
@@ -116,6 +130,11 @@ html {
 
       .value-icon {
         height: 50px;
+        margin-top: 30px;
+      }
+
+      p {
+        margin-right: 30px;
       }
     }
 
@@ -157,16 +176,46 @@ html {
     #contact-section {
       background-color: #f7f9ff;
 
+      #section-triangle3 {
+        width: 0;
+      	height: 0;
+      	border-bottom: 150px solid #f7f9ff;
+      }
+
       h2 {
+        margin-top: 80px;
+
         div {
           background-color: #f7f9ff;
         }
       }
 
-      #section-triangle3 {
-        width: 0;
-      	height: 0;
-      	border-bottom: 150px solid #f7f9ff;
+      div {
+        padding: 0 0 70px 0;
+
+        p {
+          margin-top: 35px;
+          margin-bottom: 40px;
+        }
+
+        a {
+          font-family: "Apercu";
+          font-size: 17px;
+          letter-spacing: 2px;
+          font-weight: bold;
+          margin-top: 30px;
+          margin-bottom: 70px;
+          color: #fff;
+          background-color: #4b86ff;
+          padding: 14px 48px;
+          border-radius: 6px;
+          transition: background 0.3s ease-in-out, border 0.3s ease-in-out, padding 0.2s ease;
+
+          &:hover {
+            text-decoration: none;
+            background-color: #65a0ff;
+          }
+        }
       }
     }
   }
