@@ -221,6 +221,18 @@ html {
             background-color: #65a0ff;
           }
         }
+
+        @media screen and (min-width: 560px) {
+          a.mobile {
+            display: none;
+          }
+        }
+
+        @media screen and (max-width: 559px) {
+          a.desktop {
+            display: none;
+          }
+        }
       }
     }
   }
