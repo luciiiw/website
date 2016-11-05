@@ -1,6 +1,45 @@
-# UwBlueprint
+# UW Blueprint Website
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.18.
+This repository contains the landing page for UW Blueprint. It can be accessed at [https://uwblueprint.org](https://uwblueprint.org) and is hosted on Firebase.
+
+## Prerequisites
+* `Node.js - 6.9.1+`
+* `angular-cli - 1.0.0-beta.18`
+* `firebase-tools - 3.1.0`
+
+Once you have `Node.js` installed, run:
+
+```bash
+npm install -g angular-cli
+npm install -g firebase-tools
+```
+
+## Development Environment
+Here are the instructions to get the development environment up and running.
+
+Clone the repository:
+
+```bash
+git clone https://github.com/uwblueprint/website.git
+```
+
+Navigate to the `website` directory:
+
+```bash
+cd website
+```
+
+Install required packages:
+
+```bash
+npm install
+```
+
+Run the server:
+
+```bash
+ng serve
+```
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
