@@ -3,6 +3,6 @@ deployment:
     branch: master
     commands:
       - npm install -g firebase-tools
-      - npm install -g sass
+      - sudo apt-get install ruby-sass 
       - sass public/site.scss public/site.css
       - firebase deploy --token=$FIREBASE_TOKEN --non-interactive
