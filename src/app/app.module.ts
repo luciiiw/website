@@ -4,10 +4,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
+import { AngularFireModule } from 'angularfire2';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { StudentApplicationComponent } from './student-application/student-application.component';
 import { EmailValidator } from './directives/validate-email.directive';
+import { CONFIG } from '../configs/config';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { EmailValidator } from './directives/validate-email.directive';
     EmailValidator
   ],
   imports: [
+    AngularFireModule.initializeApp(CONFIG.firebaseConfig),
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,

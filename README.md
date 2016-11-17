@@ -41,6 +41,21 @@ Run the server:
 ng serve
 ```
 
+### Setting up secrets
+Since this project is meant to be shared with other potential chapters of Blueprint, we keep our secrets separate from the repository.
+
+Within the `src/configs` directory, create a file called `secrets.ts` with the contents: 
+
+```javascript
+export const SECRETS = {
+  FIREBASE_API_KEY: '<API_KEY>'
+}
+```
+
+To obtain the API key, either log in to the Firebase console and find it under "Project Settings" or ask one of the team members.
+
+Please **do not** push credentials and secrets to this repository!
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 

@@ -9,8 +9,9 @@ declare var $:JQueryStatic;
 })
 
 export class MainComponent {
-    constructor() {
-    }
+  constructor() {
+  }
+
 
   ngAfterViewInit() {
     function triangle() {

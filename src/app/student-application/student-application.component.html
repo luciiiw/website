@@ -44,44 +44,24 @@
       <div *ngFor="let position of positions"
            class="col-sm-4 col-md-4 u-border-light">
           <input type="checkbox"
-                 name="positions"
+                 formControlName="positions"
                  value="{{position.value}}"
-                 ([ngModel])="position.checked"/>
+                 [(ngModel)]="position.selected"/>
           <span [innerHtml]="position.name"></span>
       </div> 
     </div>
     <h4>Short answers</h4>
     <p>Please answer the following questions in 1 or 2 sentences. It's okay if you don't have an answer for every question!</p>
-    <div class="row">
+    <div *ngFor="let q of shortAnswers; let i = index" 
+         class="row">
       <div class="col-sm-12 col-md-12">
-        <label for="question1">Why do you want to join Blueprint?</label>
-        <textarea id="question1" formControlName="question1" placeholder="e.g. I want to meet awesome people that are passionate about volunteering and helping non-profits!"></textarea>
+        <label attr.for="{{'question' + i}}">{{q.question}}</label>
+        <textarea id="{{'question' + i}}" 
+                  formControlName="questions" 
+                  placeholder="{{q.placeholder}}"
+                  [(ngModel)]="q.answer"></textarea>
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm-12 col-md-12">
-        <label for="question2">Tell us about any project(s) you have worked on in the past:</label>
-        <textarea id="question2" formControlName="question2" placeholder="Programming, non-programming, or both"></textarea>
-      </div>
-    </div> 
-    <div class="row">
-      <div class="col-sm-12 col-md-12">
-        <label for="question3">Describe any past volunteer/non-profit experience you may have:</label>
-        <textarea id="question3" formControlName="question3" placeholder="e.g. Red Cross, local soup kitchen, etc. "></textarea>
-      </div>
-    </div> 
-    <div class="row">
-      <div class="col-sm-12 col-md-12">
-        <label for="question4">Tell us a fun fact:</label>
-        <textarea id="question4" formControlName="question4" placeholder="e.g. I can lick my elbow!"></textarea>
-      </div>
-    </div> 
-    <div class="row">
-      <div class="col-sm-12 col-md-12">
-        <label for="question5">Is there anything else you would like to share?</label>
-        <textarea id="question5" formControlName="question5" placeholder="(Optional)"></textarea>
-      </div>
-    </div> 
     <div class="row u-text-align-right u-padding-right-15">
       <div> 
         <button class="btn btn-default btn-lg" type="submit">Apply</button>
