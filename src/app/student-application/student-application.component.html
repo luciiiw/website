@@ -1,1 +1,91 @@
-<h1>Welcome to the Student Application Component!</h1>
+<div class="container">
+  <div class="row u-margin-bottom-30">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <h2 style="letter-spacing: 1; line-height: 1em; height: auto; margin-bottom: 10px;">Student Application</h2>
+      <p>Thanks for your interest in UW Blueprint! We are always looking for UW students to take part in our club activities and join our talented team.</p>
+      <p>We are looking for the following positions:</p>
+      <h3>Project developer</h3>
+      <p>A project developer works on a specific project for a non-profit, led by a team lead. This includes mostly dev work, and potentially some architecture design, and/or visual design.</p> 
+      <h3>Project developer (mentor)</h3>
+      <p>A project developer who is also a mentor has the same duties as a project developer, but in addition, they pair program with an inexperienced developer.</p>
+      <h3>Project lead</h3>
+      <p>A project lead is responsible for organizing other team members and getting the project done. This can include creating tasks, assigning priorities and giving time estimates, or just following up with team members to make sure work is on track.</p>
+    </div>
+  </div>
+  <form class="form-group student-application" [formGroup]="studentApplicationForm" (submit)="submitForm($event)">
+    <h4>Basic information</h4>
+    <div class="row">
+      <div class="col-sm-6 col-md-6">
+        <label for="firstName">First Name</label>
+        <input id="firstName" formControlName="firstName" type="text" placeholder="e.g. John, Jane">
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <label for="lastName">Last Name</label>
+        <input id="lastName" formControlName="lastName" type="text" placeholder="e.g. Smith">
+      </div>
+      <div class="col-sm-12 col-md-12">
+        <label for="email">Email</label>
+        <input id="email" formControlName="email" type="email" placeholder="e.g. example@domain.com" validateEmail>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-6">
+        <label for="program">Program</label>
+        <input id="program" formControlName="program" type="text" placeholder="e.g. Computer Science, Biology">
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <label for="academicYear">Academic Year</label>
+        <input id="academicYear" formControlName="academicYear" type="text" placeholder="e.g. 2B, 4A">
+      </div>
+    </div>
+    <h4>Position preference</h4>
+    <p>Please select the positions you are interested in:</p>
+    <div class="row">
+      <div *ngFor="let position of positions"
+           class="col-sm-4 col-md-4 u-border-light">
+          <input type="checkbox"
+                 name="positions"
+                 value="{{position.value}}"
+                 ([ngModel])="position.checked"/>
+          <span [innerHtml]="position.name"></span>
+      </div> 
+    </div>
+    <h4>Short answers</h4>
+    <p>Please answer the following questions in 1 or 2 sentences. It's okay if you don't have an answer for every question!</p>
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <label for="question1">Why do you want to join Blueprint?</label>
+        <textarea id="question1" formControlName="question1" placeholder="e.g. I want to meet awesome people that are passionate about volunteering and helping non-profits!"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <label for="question2">Tell us about any project(s) you have worked on in the past:</label>
+        <textarea id="question2" formControlName="question2" placeholder="Programming, non-programming, or both"></textarea>
+      </div>
+    </div> 
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <label for="question3">Describe any past volunteer/non-profit experience you may have:</label>
+        <textarea id="question3" formControlName="question3" placeholder="e.g. Red Cross, local soup kitchen, etc. "></textarea>
+      </div>
+    </div> 
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <label for="question4">Tell us a fun fact:</label>
+        <textarea id="question4" formControlName="question4" placeholder="e.g. I can lick my elbow!"></textarea>
+      </div>
+    </div> 
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <label for="question5">Is there anything else you would like to share?</label>
+        <textarea id="question5" formControlName="question5" placeholder="(Optional)"></textarea>
+      </div>
+    </div> 
+    <div class="row u-text-align-right u-padding-right-15">
+      <div> 
+        <button class="btn btn-default btn-lg" type="submit">Apply</button>
+      </div>
+    </div>
+  </form>
+</div>
