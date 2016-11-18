@@ -10,13 +10,17 @@ import { MainComponent } from './main/main.component';
 import { StudentApplicationComponent } from './student-application/student-application.component';
 import { EmailValidator } from './directives/validate-email.directive';
 import { CONFIG } from '../configs/config';
+import { AdminComponent } from './admin/admin.component';
+import { StudentDetailsComponent } from './student-details/student-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     StudentApplicationComponent,
-    EmailValidator
+    EmailValidator,
+    AdminComponent,
+    StudentDetailsComponent
   ],
   imports: [
     AngularFireModule.initializeApp(CONFIG.firebaseConfig),
@@ -26,7 +30,9 @@ import { CONFIG } from '../configs/config';
     HttpModule,
     RouterModule.forRoot([
       { path: '', component: MainComponent },
-      { path: 'student-application', component: StudentApplicationComponent }
+      { path: 'admin', component: AdminComponent },
+      { path: 'student-application', component: StudentApplicationComponent },
+      { path: 'admin/student-details/:key', component: StudentDetailsComponent },
     ])
   ],
   providers: [],
