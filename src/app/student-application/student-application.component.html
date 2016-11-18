@@ -23,6 +23,8 @@
         <label for="lastName">Last Name</label>
         <input id="lastName" formControlName="lastName" type="text" placeholder="e.g. Smith">
       </div>
+    </div>
+    <div class="row">
       <div class="col-sm-12 col-md-12">
         <label for="email">Email</label>
         <input id="email" formControlName="email" type="email" placeholder="e.g. example@domain.com" validateEmail>
@@ -36,6 +38,12 @@
       <div class="col-sm-6 col-md-6">
         <label for="academicYear">Academic Year</label>
         <input id="academicYear" formControlName="academicYear" type="text" placeholder="e.g. 2B, 4A">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <label for="resume">Resume</label>
+        <input id="resume" formControlName="resume" type="file" value="upload" #filebtn (change)="uploadResume($event)">
       </div>
     </div>
     <h4>Position preference</h4>
