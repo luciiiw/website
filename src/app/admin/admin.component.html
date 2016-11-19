@@ -1,24 +1,31 @@
-<div class="container">
+<div class="container" *ngFor="let status of statuses">
+  <h3 [innerHtml]="status"></h3>
   <div class="row">
     <table class="table">
       <thead>
         <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
+          <th>Name</th>
           <th>Resume</th>
           <th>Details</th>
           <th>Actions</th>
+          <th>Change Status</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let a of studentApplications | async">
-          <td [innerHtml]='a.firstName'></td>
-          <td [innerHtml]='a.lastName'></td>
+        <tr *ngFor="let a of studentApplications | async | filter : 'status' : status">
+          <td [innerHtml]="a.firstName + ' ' + a.lastName"></td>
           <td><a href="{{ a.resumeUrl }}">Resume Link</a></td>
           <td>
             <a [routerLink]="['/admin/student-details', a.$key]">Details</a>
           </td>
-          <td></td>
+          <td>
+            <button class="btn btn-default btn-sm" (click)='deleteStudentApplication(a.$key)'>Delete</button>
+          </td>
+          <td>
+            <select (change)="onStatusSelect($event, a.$key)">
+              <option *ngFor="let i of statuses">{{ i }}</option>
+            </select>
+          </td>
         </tr>
       </tbody>
     </table>

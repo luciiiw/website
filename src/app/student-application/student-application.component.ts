@@ -74,6 +74,7 @@ export class StudentApplicationComponent {
   }
 
   submitForm(event) {
+    this.studentApplicationForm.value.status = 'pending';
     this.studentApplicationForm.value.positions = this.selectedPositions;
     this.studentApplicationForm.value.questions = this.shortAnswers;
     if (this.resumeUrl) {
@@ -90,7 +91,7 @@ export class StudentApplicationComponent {
     if (!file) {
       return
     }
-    let path = 'resumes/'+file.name;
+    let path = 'resumes/'+UUID.UUID();
     let storageRef = this.storage.child(path); 
     let task = storageRef.put(file);
   

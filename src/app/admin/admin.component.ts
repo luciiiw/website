@@ -9,9 +9,27 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class AdminComponent implements OnInit {
   studentApplications: FirebaseListObservable<any>;
+  
+  statuses = ['pending', 'rejected', 'interviewed', 'joined'];
 
   constructor(af: AngularFire) {
     this.studentApplications = af.database.list('studentApplications/');
+  }
+
+  onStatusSelect(event, key) {
+    this.updateStudentApplicationStatus(key, event.target.value); 
+  }
+
+  updateStudentApplicationStatus(key, status) {
+    this.updateStudentApplication(key, { status: status });
+  }
+
+  updateStudentApplication(key, update) {
+    this.studentApplications.update(key, update);
+  }
+
+  deleteStudentApplication(key) {
+    this.studentApplications.remove(key); 
   }
 
   ngOnInit() {

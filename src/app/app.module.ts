@@ -4,13 +4,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
+import { AdminComponent } from './admin/admin.component';
 import { AngularFireModule } from 'angularfire2';
 import { AppComponent } from './app.component';
+import { CONFIG } from '../configs/config';
+import { EmailValidator } from './directives/validate-email.directive';
+import { FilterPipe } from './pipes/filter.pipe';
 import { MainComponent } from './main/main.component';
 import { StudentApplicationComponent } from './student-application/student-application.component';
-import { EmailValidator } from './directives/validate-email.directive';
-import { CONFIG } from '../configs/config';
-import { AdminComponent } from './admin/admin.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
 
 @NgModule({
@@ -20,7 +21,8 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
     StudentApplicationComponent,
     EmailValidator,
     AdminComponent,
-    StudentDetailsComponent
+    StudentDetailsComponent,
+    FilterPipe,
   ],
   imports: [
     AngularFireModule.initializeApp(CONFIG.firebaseConfig),
