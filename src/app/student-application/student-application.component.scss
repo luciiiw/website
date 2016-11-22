@@ -29,4 +29,14 @@
     border-radius: 4px;
     resize: none;
   }
+
+  .invalid {
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="file"],
+    textarea {
+      border: 1px solid #FF0033;
+    }
+  }
 }

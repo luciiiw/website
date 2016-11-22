@@ -27,27 +27,32 @@ export class StudentApplicationComponent {
     { 
       question: 'Why do you want to join Blueprint?', 
       placeholder: 'e.g. I want to meet awesome people that are passionate about volunteering and helping non-profits!',
-      answer: '' 
+      answer: '',
+      required: true
     },
     { 
       question: 'Tell us about any project(s) you have worked on in the past (coding, non-coding, or both):',
       placeholder: 'e.g. I recently worked on a simple website', 
-      answer: ''
+      answer: '',
+      required: true
     },
     { 
       question: 'Describe any past volunteer/non-profit experience you may have:',
       placeholder: 'e.g. Red Cross, local soup kitchen, etc.',
-      answer: '' 
+      answer: '' ,
+      required: true
     },
     { 
       question: 'Tell us a fun fact!', 
       placeholder: 'e.g. I can lick my elbow!',
-      answer: '' 
+      answer: '',
+      required: true
     },
     { 
       question: 'Is there anything else you would like to share?',
       placeholder: '(Optional)',
-      answer: '' 
+      answer: '', 
+      required: false
     }
   ];
 
@@ -60,14 +65,28 @@ export class StudentApplicationComponent {
   constructor(public fb: FormBuilder, af: AngularFire) {
     this.studentApplicationForm = this.fb.group({
       email: ["", Validators.required],
-      firstName: ["", Validators.required],
-      lastName: ["", Validators.required],
-      program: ["", Validators.required],
-      resume: new FormControl(),
-      positions: new FormControl(),
+      firstName: ["", Validators.compose([
+        Validators.required,
+        Validators.maxLength(30)
+      ])],
+      lastName: ["", Validators.compose([
+        Validators.required,
+        Validators.maxLength(30)
+      ])],
+      program: ["", Validators.compose([
+        Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(2)
+      ])],
       academicYear: ["", Validators.required],
-      questions: ["", Validators.required],
-    });
+      question1: ["", Validators.required],
+      question2: ["", Validators.required],
+      question3: ["", Validators.required],
+      question4: ["", Validators.required],
+      question5: "", 
+      resume: new FormControl(),
+      positions: new FormControl()
+   });
     
     this.applications = af.database.list('studentApplications/');
     this.storage = firebase.storage().ref();
