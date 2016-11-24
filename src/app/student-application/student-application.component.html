@@ -109,11 +109,14 @@
               !studentApplicationForm.controls['positions'].valid &&
               studentApplicationForm.controls['positions'].touched
             }">
-          <input type="checkbox"
-                 value="{{position.value}}"
-                 formControlName="positions"
-                 [(ngModel)]="position.selected"/>
-          <span [innerHtml]="position.name"></span>
+          <label attr.for="{{position.name}}">
+            <input type="checkbox"
+                   value="{{position.value}}"
+                   id="{{position.name}}"
+                   formControlName="positions"
+                   [(ngModel)]="position.selected"/>
+            <span [innerHtml]="position.name"></span>
+          </label>
       </div> 
     </div>
     <h4>Short answers</h4>

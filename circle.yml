@@ -1,0 +1,15 @@
+deployment:
+  development:
+    branch: feature/firebase
+    commands:
+      - npm install -g angular-cli
+      - npm install -g firebase-tools
+      - ng build
+      - firebase deploy -P uw-blueprint-dev --token=$FIREBASE_TOKEN --non-interactive 
+  production:
+    branch: master
+    commands:
+      - npm install -g angular-cli
+      - npm install -g firebase-tools
+      - ng build
+      - firebase deploy -P uw-blueprint --token=$FIREBASE_TOKEN --non-interactive

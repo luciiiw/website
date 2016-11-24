@@ -119,11 +119,14 @@
                 !nonProfitApplicationForm.controls['preferredContactMethods'].valid &&
                 nonProfitApplicationForm.controls['preferredContactMethods'].touched
               }">
+          <label attr.for="{{c.name}}">
             <input type="checkbox"
+                   id="{{c.name}}"
                    value="{{c.value}}"
                    formControlName="preferredContactMethods"
                    [(ngModel)]="c.selected"/>
             <span [innerHtml]="c.name"></span>
+          </label>
         </div> 
       </div>
     </div>
