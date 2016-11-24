@@ -10,7 +10,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 export class AdminComponent implements OnInit {
   studentApplications: FirebaseListObservable<any>;
   nonProfitApplications: FirebaseListObservable<any>;
-  
+
   statuses = ['pending', 'rejected', 'interviewed', 'joined'];
 
   constructor(af: AngularFire) {
@@ -19,7 +19,7 @@ export class AdminComponent implements OnInit {
   }
 
   onStudentStatusSelect(event, key) {
-    this.updateStudentApplicationStatus(key, event.target.value); 
+    this.updateStudentApplicationStatus(key, event.target.value);
   }
 
   updateStudentApplicationStatus(key, status) {
@@ -31,11 +31,11 @@ export class AdminComponent implements OnInit {
   }
 
   deleteStudentApplication(key) {
-    this.studentApplications.remove(key); 
+    this.studentApplications.remove(key);
   }
 
   onNonProfitStatusSelect(event, key) {
-    this.updateNonProfitApplicationStatus(key, event.target.value); 
+    this.updateNonProfitApplicationStatus(key, event.target.value);
   }
 
   updateNonProfitApplicationStatus(key, status) {
@@ -47,7 +47,7 @@ export class AdminComponent implements OnInit {
   }
 
   deleteNonProfitApplication(key) {
-    this.nonProfitApplications.remove(key); 
+    this.nonProfitApplications.remove(key);
   }
 
   ngOnInit() {

@@ -1,4 +1,4 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 import { UUID } from 'angular2-uuid';
@@ -7,7 +7,7 @@ import * as _ from 'lodash';
 import * as firebase from 'firebase';
 
 @Component({
-  selector: 'student-application',
+  selector: 'app-student-application',
   templateUrl: './student-application.component.html',
   styleUrls: ['./student-application.component.scss']
 })
@@ -24,27 +24,27 @@ export class StudentApplicationComponent {
   ];
 
   shortAnswers = [
-    { 
-      question: 'Why do you want to join Blueprint?', 
+    {
+      question: 'Why do you want to join Blueprint?',
       placeholder: 'e.g. I want to meet awesome people that are passionate about volunteering and helping non-profits!',
       answer: ''
     },
-    { 
+    {
       question: 'Tell us about any project(s) you have worked on in the past (coding, non-coding, or both):',
-      placeholder: 'e.g. I recently worked on a simple website', 
+      placeholder: 'e.g. I recently worked on a simple website',
       answer: ''
     },
-    { 
+    {
       question: 'Describe any past volunteer/non-profit experience you may have:',
       placeholder: 'e.g. Red Cross, local soup kitchen, etc.',
-      answer: '' 
+      answer: ''
     },
-    { 
-      question: 'Tell us a fun fact!', 
+    {
+      question: 'Tell us a fun fact!',
       placeholder: 'e.g. I can lick my elbow!',
       answer: ''
     },
-    { 
+    {
       question: 'Is there anything else you would like to share?',
       placeholder: '(Optional)',
       answer: ''
@@ -54,35 +54,35 @@ export class StudentApplicationComponent {
   get selectedPositions() {
     return this.positions
               .filter(opt => opt.selected)
-              .map(opt => opt.name)
+              .map(opt => opt.name);
   }
-  
+
   constructor(public fb: FormBuilder, af: AngularFire) {
     this.studentApplicationForm = this.fb.group({
-      email: ["", Validators.required],
-      firstName: ["", Validators.compose([
+      email: ['', Validators.required],
+      firstName: ['', Validators.compose([
         Validators.required,
         Validators.maxLength(30)
       ])],
-      lastName: ["", Validators.compose([
+      lastName: ['', Validators.compose([
         Validators.required,
         Validators.maxLength(30)
       ])],
-      program: ["", Validators.compose([
+      program: ['', Validators.compose([
         Validators.required,
         Validators.minLength(2),
         Validators.maxLength(2)
       ])],
-      academicYear: ["", Validators.required],
-      question1: ["", Validators.required],
-      question2: ["", Validators.required],
-      question3: ["", Validators.required],
-      question4: ["", Validators.required],
-      question5: "", 
+      academicYear: ['', Validators.required],
+      question1: ['', Validators.required],
+      question2: ['', Validators.required],
+      question3: ['', Validators.required],
+      question4: ['', Validators.required],
+      question5: '',
       resume: new FormControl(),
       positions: new FormControl()
    });
-    
+
     this.applications = af.database.list('studentApplications/');
     this.storage = firebase.storage().ref();
   }
@@ -103,12 +103,12 @@ export class StudentApplicationComponent {
   uploadResume(event) {
     let file = event.srcElement.files[0];
     if (!file) {
-      return
+      return;
     }
-    let path = 'resumes/'+UUID.UUID();
-    let storageRef = this.storage.child(path); 
+    let path = 'resumes/' + UUID.UUID();
+    let storageRef = this.storage.child(path);
     let task = storageRef.put(file);
-  
+
     task.on('state_changed', snapshot => {
       // Do stuff on state_changed
     }, error => {

@@ -27,7 +27,7 @@ export class StudentDetailsComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }

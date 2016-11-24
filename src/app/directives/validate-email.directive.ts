@@ -14,13 +14,13 @@ function validateEmailFactory() {
 }
 
 @Directive({
-  selector: '[validateEmail][ngModel],[validateEmail][formControl]',
+  selector: '[appValidateEmail][ngModel],[appValidateEmail][formControl]',
   providers: [
-    { provide: NG_VALIDATORS, useClass: forwardRef(() => EmailValidator), multi: true }
+    { provide: NG_VALIDATORS, useClass: forwardRef(() => EmailValidatorDirective), multi: true }
   ]
 })
 
-export class EmailValidator {
+export class EmailValidatorDirective {
   validator: Function;
 
   constructor() {

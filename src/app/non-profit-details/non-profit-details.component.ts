@@ -28,7 +28,7 @@ export class NonProfitDetailsComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }

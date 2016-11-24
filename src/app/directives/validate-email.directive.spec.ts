@@ -1,11 +1,11 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { ValidateEmailDirective } from './validate-email.directive';
+import { EmailValidatorDirective } from './validate-email.directive';
 
-describe('Directive: ValidateEmail', () => {
+describe('Directive: EmailValidator', () => {
   it('should create an instance', () => {
-    let directive = new ValidateEmailDirective();
+    let directive = new EmailValidatorDirective();
     expect(directive).toBeTruthy();
   });
 });
