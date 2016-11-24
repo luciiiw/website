@@ -18,7 +18,7 @@ export class AdminComponent implements OnInit {
     this.nonProfitApplications = af.database.list('nonProfitApplications/');
   }
 
-  onStatusSelect(event, key) {
+  onStudentStatusSelect(event, key) {
     this.updateStudentApplicationStatus(key, event.target.value); 
   }
 
@@ -32,6 +32,22 @@ export class AdminComponent implements OnInit {
 
   deleteStudentApplication(key) {
     this.studentApplications.remove(key); 
+  }
+
+  onNonProfitStatusSelect(event, key) {
+    this.updateNonProfitApplicationStatus(key, event.target.value); 
+  }
+
+  updateNonProfitApplicationStatus(key, status) {
+    this.updateNonProfitApplication(key, { status: status });
+  }
+
+  updateNonProfitApplication(key, update) {
+    this.nonProfitApplications.update(key, update);
+  }
+
+  deleteNonProfitApplication(key) {
+    this.nonProfitApplications.remove(key); 
   }
 
   ngOnInit() {

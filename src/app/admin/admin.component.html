@@ -23,7 +23,7 @@
             <button class="btn btn-default btn-sm" (click)='deleteStudentApplication(a.$key)'>Delete</button>
           </td>
           <td>
-            <select (change)="onStatusSelect($event, a.$key)">
+            <select (change)="onStudentStatusSelect($event, a.$key)">
               <option *ngFor="let i of statuses">{{ i }}</option>
             </select>
           </td>
@@ -57,7 +57,7 @@
             <button class="btn btn-default btn-sm" (click)='deleteNonProfitApplication(a.$key)'>Delete</button>
           </td>
           <td>
-            <select (change)="onStatusSelect($event, a.$key)">
+            <select (change)="onNonProfitStatusSelect($event, a.$key)">
               <option *ngFor="let i of statuses">{{ i }}</option>
             </select>
           </td>
