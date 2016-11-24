@@ -11,30 +11,36 @@ import { CONFIG } from '../configs/config';
 import { EmailValidator } from './directives/validate-email.directive';
 import { FilterPipe } from './pipes/filter.pipe';
 import { MainComponent } from './main/main.component';
+import { NonProfitApplicationComponent } from './non-profit-application/non-profit-application.component';
+import { NonProfitDetailsComponent } from './non-profit-details/non-profit-details.component';
 import { StudentApplicationComponent } from './student-application/student-application.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MainComponent,
-    StudentApplicationComponent,
-    EmailValidator,
     AdminComponent,
-    StudentDetailsComponent,
+    AppComponent,
+    EmailValidator,
     FilterPipe,
+    MainComponent,
+    NonProfitApplicationComponent,
+    StudentApplicationComponent,
+    StudentDetailsComponent,
+    NonProfitDetailsComponent
   ],
   imports: [
     AngularFireModule.initializeApp(CONFIG.firebaseConfig),
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule,
     HttpModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: MainComponent },
       { path: 'admin', component: AdminComponent },
-      { path: 'student-application', component: StudentApplicationComponent },
       { path: 'admin/student-details/:key', component: StudentDetailsComponent },
+      { path: 'admin/non-profit-details/:key', component: NonProfitDetailsComponent },
+      { path: 'non-profits/application', component: NonProfitApplicationComponent },
+      { path: 'students/application', component: StudentApplicationComponent }
     ])
   ],
   providers: [],

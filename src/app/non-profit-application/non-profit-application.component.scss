@@ -1,0 +1,43 @@
+.student-application {
+
+  label {
+    display: block;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="file"],
+  input[type="number"] {
+    border: 1px solid #EEEEEE; 
+    border-radius: 4px; 
+    margin-bottom: 24px;
+    padding: 1em; 
+    width: 100%;
+    font-size: 14px;
+    color: #757575;
+  }
+
+  input[type="checkbox"] {
+    margin-right: 5px;  
+  }
+
+  textarea {
+    border: 1px solid #EEEEEE;
+    height: 100px;
+    margin-bottom: 24px;
+    width: 100%;
+    padding: 1em;
+    border-radius: 4px;
+    resize: none;
+  }
+
+  .invalid {
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="file"],
+    textarea {
+      border: 1px solid #FF0033;
+    }
+  }
+}

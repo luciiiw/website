@@ -103,7 +103,7 @@
     <p>Please select the positions you are interested in:</p>
     <div class="row">
       <div *ngFor="let position of positions"
-           class="col-sm-4 col-md-4 u-border-light"
+           class="col-sm-4 col-md-4"
            [ngClass]="{ 
             'invalid': 
               !studentApplicationForm.controls['positions'].valid &&

@@ -33,3 +33,6 @@ Thumbs.db
 
 # Secrets
 /src/configs/secrets.ts
+
+# VIM files
+*.swp

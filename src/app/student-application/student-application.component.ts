@@ -20,39 +20,34 @@ export class StudentApplicationComponent {
   positions = [
     { name: 'Project Developer', value: '1', selected: false },
     { name: 'Project Developer (mentor)', value: '2', selected: false },
-    { name: 'Project Lead', value: '2', selected: false }
+    { name: 'Project Lead', value: '3', selected: false }
   ];
 
   shortAnswers = [
     { 
       question: 'Why do you want to join Blueprint?', 
       placeholder: 'e.g. I want to meet awesome people that are passionate about volunteering and helping non-profits!',
-      answer: '',
-      required: true
+      answer: ''
     },
     { 
       question: 'Tell us about any project(s) you have worked on in the past (coding, non-coding, or both):',
       placeholder: 'e.g. I recently worked on a simple website', 
-      answer: '',
-      required: true
+      answer: ''
     },
     { 
       question: 'Describe any past volunteer/non-profit experience you may have:',
       placeholder: 'e.g. Red Cross, local soup kitchen, etc.',
-      answer: '' ,
-      required: true
+      answer: '' 
     },
     { 
       question: 'Tell us a fun fact!', 
       placeholder: 'e.g. I can lick my elbow!',
-      answer: '',
-      required: true
+      answer: ''
     },
     { 
       question: 'Is there anything else you would like to share?',
       placeholder: '(Optional)',
-      answer: '', 
-      required: false
+      answer: ''
     }
   ];
 
