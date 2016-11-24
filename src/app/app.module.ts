@@ -8,7 +8,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AngularFireModule } from 'angularfire2';
 import { AppComponent } from './app.component';
 import { CONFIG } from '../configs/config';
-import { EmailValidator } from './directives/validate-email.directive';
+import { EmailValidatorDirective } from './directives/validate-email.directive';
 import { FilterPipe } from './pipes/filter.pipe';
 import { MainComponent } from './main/main.component';
 import { NonProfitApplicationComponent } from './non-profit-application/non-profit-application.component';
@@ -20,7 +20,7 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
   declarations: [
     AdminComponent,
     AppComponent,
-    EmailValidator,
+    EmailValidatorDirective,
     FilterPipe,
     MainComponent,
     NonProfitApplicationComponent,
