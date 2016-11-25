@@ -68,12 +68,12 @@ export class StudentApplicationComponent {
         Validators.required,
         Validators.maxLength(30)
       ])],
-      program: ['', Validators.compose([
+      program: ['', Validators.required],
+      academicYear: ['', Validators.compose([
         Validators.required,
         Validators.minLength(2),
         Validators.maxLength(2)
       ])],
-      academicYear: ['', Validators.required],
       question1: ['', Validators.required],
       question2: ['', Validators.required],
       question3: ['', Validators.required],
