@@ -56,6 +56,17 @@ To obtain the API key, either log in to the Firebase console and find it under "
 
 Please **do not** push credentials and secrets to this repository!
 
+## Deployment
+
+Currently, the project is set up with continuous integration through CircleCI. 
+
+* For the time being, the dev or staging site is deployed when a new commit is pushed to the `feature/firebase` branch. The build script `build/dev.sh` will be executed. 
+* The production site is deployed when a new commit is pushed to the `master` branch. The build script `build/prod.sh` will be executed.
+
+There is a slight hack in the build scripts where the `firebase` package is installed manually and then `firebase.d.ts` is removed from the package to avoid errors caused by duplicate identifiers.
+
+The `firebase` package needs to be installed as the project does not compile without it on CircleCI's instances. This is still under investgation.  
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
