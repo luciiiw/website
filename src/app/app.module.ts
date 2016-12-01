@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { AngularFireModule } from 'angularfire2';
 import { AppComponent } from './app.component';
+import { ApplicationSuccessComponent } from './application-success/application-success.component';
 import { CONFIG } from '../configs/config';
 import { EmailValidatorDirective } from './directives/validate-email.directive';
 import { FilterPipe } from './pipes/filter.pipe';
@@ -26,7 +27,8 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
     NonProfitApplicationComponent,
     StudentApplicationComponent,
     StudentDetailsComponent,
-    NonProfitDetailsComponent
+    NonProfitDetailsComponent,
+    ApplicationSuccessComponent
   ],
   imports: [
     AngularFireModule.initializeApp(CONFIG.firebaseConfig),
@@ -40,7 +42,9 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
       { path: 'admin/student-details/:key', component: StudentDetailsComponent },
       { path: 'admin/non-profit-details/:key', component: NonProfitDetailsComponent },
       { path: 'non-profits/application', component: NonProfitApplicationComponent },
-      { path: 'students/application', component: StudentApplicationComponent }
+      { path: 'non-profits/application/success', component: ApplicationSuccessComponent },
+      { path: 'students/application', component: StudentApplicationComponent },
+      { path: 'students/application/success', component: ApplicationSuccessComponent },
     ])
   ],
   providers: [],

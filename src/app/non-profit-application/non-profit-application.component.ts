@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import * as firebase from 'firebase';
@@ -23,22 +24,22 @@ export class NonProfitApplicationComponent {
 
   shortAnswers = [
     {
-      question: 'What does your organization do?',
+      question: 'What does your organization do?*',
       placeholder: 'e.g. We build technical projects for social good',
       answer: ''
     },
     {
-      question: 'What problem do you need help with?',
+      question: 'What problem do you need help with?*',
       placeholder: 'e.g. We want help with building a system that conducts surveys to people without a reliable internet connection',
       answer: ''
     },
     {
-      question: 'Do you have a specific solution in mind? If so, please briefly describe the solution:',
+      question: 'Do you have a specific solution in mind? If so, please briefly describe the solution:*',
       placeholder: 'e.g. We want to conduct the surveys over SMS so that people without internet and smartphones can easily participate in the surveys',
       answer: ''
     },
     {
-      question: 'Please provide your availability over the next couple of weeks:',
+      question: 'Please provide your availability over the next couple of weeks:*',
       placeholder: 'e.g. I am available on MWF between 10AM - 2PM (EST)',
       answer: ''
     }
@@ -50,7 +51,7 @@ export class NonProfitApplicationComponent {
               .map(opt => opt.name);
   }
 
-  constructor(public fb: FormBuilder, af: AngularFire) {
+  constructor(public fb: FormBuilder, public af: AngularFire, public router: Router) {
     this.nonProfitApplicationForm = this.fb.group({
       organizationName: ['', Validators.required],
       website: ['', Validators.required],
@@ -81,8 +82,8 @@ export class NonProfitApplicationComponent {
     this.nonProfitApplicationForm.value.preferredContactMethods = this.selectedMethods;
     this.nonProfitApplicationForm.value.questions = this.shortAnswers;
 
-    console.log(this.nonProfitApplicationForm.value);
-    this.applications.push(this.nonProfitApplicationForm.value);
-    event.preventDefault();
+    const promise = this.applications.push(this.nonProfitApplicationForm.value);
+    promise
+      .then(_ => this.router.navigate(['non-profits/application/success'])); 
   }
 }

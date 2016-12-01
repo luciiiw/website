@@ -23,7 +23,7 @@
               !studentApplicationForm.controls['firstName'].valid &&
               studentApplicationForm.controls['firstName'].touched
             }">
-        <label for="firstName">First Name</label>
+        <label for="firstName">First Name*</label>
         <input id="firstName" 
                type="text" 
                formControlName="firstName" 
@@ -35,7 +35,7 @@
               !studentApplicationForm.controls['lastName'].valid &&
               studentApplicationForm.controls['lastName'].touched
             }">
-        <label for="lastName">Last Name</label>
+        <label for="lastName">Last Name*</label>
         <input id="lastName" 
                type="text" 
                formControlName="lastName" 
@@ -49,7 +49,7 @@
               !studentApplicationForm.controls['email'].valid &&
               studentApplicationForm.controls['email'].touched
             }">
-        <label for="email">Email</label>
+        <label for="email">Email*</label>
         <input id="email"
                type="email"
                formControlName="email"
@@ -64,7 +64,7 @@
               !studentApplicationForm.controls['program'].valid &&
               studentApplicationForm.controls['program'].touched
             }">
-        <label for="program">Program</label>
+        <label for="program">Program*</label>
         <input id="program"
                type="text"
                formControlName="program"
@@ -76,7 +76,7 @@
               !studentApplicationForm.controls['academicYear'].valid &&
               studentApplicationForm.controls['academicYear'].touched
             }">
-        <label for="academicYear">Academic Year</label>
+        <label for="academicYear">Academic Year*</label>
         <input id="academicYear"
                type="text"
                formControlName="academicYear"
@@ -100,7 +100,7 @@
       </div>
     </div>
     <h4>Position preference</h4>
-    <p>Please select the positions you are interested in:</p>
+    <p>Please select the positions you are interested in:*</p>
     <div class="row">
       <div *ngFor="let position of positions"
            class="col-sm-4 col-md-4"

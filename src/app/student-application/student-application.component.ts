@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { UUID } from 'angular2-uuid';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
@@ -12,10 +13,10 @@ import * as firebase from 'firebase';
   styleUrls: ['./student-application.component.scss']
 })
 export class StudentApplicationComponent {
-  studentApplicationForm: FormGroup;
   applications: FirebaseListObservable<any>;
+  studentApplicationForm: FormGroup;
   storage;
-  resumeUrl: String;
+  resumeUrl: String; 
 
   positions = [
     { name: 'Project Developer', value: '1', selected: false },
@@ -25,22 +26,22 @@ export class StudentApplicationComponent {
 
   shortAnswers = [
     {
-      question: 'Why do you want to join Blueprint?',
+      question: 'Why do you want to join Blueprint?*',
       placeholder: 'e.g. I want to meet awesome people that are passionate about volunteering and helping non-profits!',
       answer: ''
     },
     {
-      question: 'Tell us about any project(s) you have worked on in the past (coding, non-coding, or both):',
+      question: 'Tell us about any project(s) you have worked on in the past (coding, non-coding, or both):*',
       placeholder: 'e.g. I recently worked on a simple website',
       answer: ''
     },
     {
-      question: 'Describe any past volunteer/non-profit experience you may have:',
+      question: 'Describe any past volunteer/non-profit experience you may have:*',
       placeholder: 'e.g. Red Cross, local soup kitchen, etc.',
       answer: ''
     },
     {
-      question: 'Tell us a fun fact!',
+      question: 'Tell us a fun fact!*',
       placeholder: 'e.g. I can lick my elbow!',
       answer: ''
     },
@@ -57,7 +58,7 @@ export class StudentApplicationComponent {
               .map(opt => opt.name);
   }
 
-  constructor(public fb: FormBuilder, af: AngularFire) {
+  constructor(public fb: FormBuilder, public af: AngularFire, public router: Router) {
     this.studentApplicationForm = this.fb.group({
       email: ['', Validators.required],
       firstName: ['', Validators.compose([
@@ -95,9 +96,9 @@ export class StudentApplicationComponent {
       this.studentApplicationForm.value.resumeUrl = this.resumeUrl;
     }
 
-    console.log(this.studentApplicationForm.value);
-    this.applications.push(this.studentApplicationForm.value);
-    event.preventDefault();
+    const promise = this.applications.push(this.studentApplicationForm.value);
+    promise
+      .then(_ => this.router.navigate(['students/application/success']));
   }
 
   uploadResume(event) {

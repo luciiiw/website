@@ -19,7 +19,7 @@
               !nonProfitApplicationForm.controls['organizationName'].valid &&
               nonProfitApplicationForm.controls['organizationName'].touched
             }">
-        <label for="organizationName">Organization Name</label>
+        <label for="organizationName">Organization Name*</label>
         <input id="organizationName" 
                type="text" 
                formControlName="organizationName" 
@@ -31,7 +31,7 @@
               !nonProfitApplicationForm.controls['website'].valid &&
               nonProfitApplicationForm.controls['website'].touched
             }">
-        <label for="website">Website</label>
+        <label for="website">Website*</label>
         <input id="website" 
                type="text" 
                formControlName="website" 
@@ -45,7 +45,7 @@
               !nonProfitApplicationForm.controls['location'].valid &&
               nonProfitApplicationForm.controls['location'].touched
             }">
-        <label for="location">Location</label>
+        <label for="location">Location*</label>
         <input id="location"
                type="text"
                formControlName="location"
@@ -61,7 +61,7 @@
               !nonProfitApplicationForm.controls['firstName'].valid &&
               nonProfitApplicationForm.controls['firstName'].touched
             }">
-        <label for="firstName">First Name</label>
+        <label for="firstName">First Name*</label>
         <input id="firstName" 
                type="text" 
                formControlName="firstName" 
@@ -73,7 +73,7 @@
               !nonProfitApplicationForm.controls['lastName'].valid &&
               nonProfitApplicationForm.controls['lastName'].touched
             }">
-        <label for="lastName">Last Name</label>
+        <label for="lastName">Last Name*</label>
         <input id="lastName" 
                type="text" 
                formControlName="lastName" 
@@ -87,7 +87,7 @@
               !nonProfitApplicationForm.controls['email'].valid &&
               nonProfitApplicationForm.controls['email'].touched
             }">
-        <label for="email">Email</label>
+        <label for="email">Email*</label>
         <input id="email"
                type="email"
                formControlName="email"
@@ -102,7 +102,7 @@
               !nonProfitApplicationForm.controls['phoneNumber'].valid &&
               nonProfitApplicationForm.controls['phoneNumber'].touched
             }">
-        <label for="phoneNumber">Phone Number</label>
+        <label for="phoneNumber">Phone Number*</label>
         <input id="phoneNumber"
                type="text"
                formControlName="phoneNumber"
@@ -111,7 +111,7 @@
     </div>
     <div class="row">
       <div class="col-sm-12 col-md-12">
-        <label for="preferredContactMethod">Preferred Contact Method</label>
+        <label for="preferredContactMethod">Preferred Contact Method*</label>
         <div id="preferredContactMethod" *ngFor="let c of preferredContactMethods"
              class="col-sm-4 col-md-4"
              [ngClass]="{ 
