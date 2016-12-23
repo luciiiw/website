@@ -73,7 +73,8 @@ export class StudentApplicationComponent {
       academicYear: ['', Validators.compose([
         Validators.required,
         Validators.minLength(2),
-        Validators.maxLength(2)
+        Validators.maxLength(2),
+        Validators.pattern('[1-5]{1}[A-B]{1}')
       ])],
       question1: ['', Validators.required],
       question2: ['', Validators.required],
@@ -81,7 +82,7 @@ export class StudentApplicationComponent {
       question4: ['', Validators.required],
       question5: '',
       resume: new FormControl(),
-      positions: new FormControl()
+      positions: [false, Validators.required]
    });
 
     this.applications = af.database.list('studentApplications/');

@@ -65,7 +65,10 @@ export class NonProfitApplicationComponent {
         Validators.maxLength(30)
       ])],
       email: ['', Validators.required],
-      phoneNumber: ['', Validators.required],
+      phoneNumber: ['', Validators.compose([
+        Validators.required,
+        Validators.pattern('^[0-9()-]+$')
+      ])],
       question1: ['', Validators.required],
       question2: ['', Validators.required],
       question3: ['', Validators.required],
