@@ -10,3 +10,6 @@ deployment:
 test:
   override:
     - echo "skipping tests for now"
+machine:
+  node:
+    version: 7.0.0
