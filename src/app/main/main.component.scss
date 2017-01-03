@@ -1,0 +1,102 @@
+@import '../../assets/styles/colors';
+
+#section-triangle2 {
+  width: 0;
+  height: 0;
+  border-bottom: 150px solid #f7f9ff;
+}
+
+#section-triangle3 {
+  width: 0;
+  height: 0;
+  border-bottom: 150px solid #fff;
+}
+
+#about-section {
+  h2 {
+    margin-top: 58px;
+    margin-bottom: 65px;
+
+    div {
+      background-color: #fff;
+    }
+  }
+
+  img {
+    margin-top: 18px;
+    width: 100%;
+  }
+}
+
+#values-section {
+  background-color: #f7f9ff;
+
+  .value-icon {
+    height: 50px;
+    margin-top: 30px;
+  }
+
+  p {
+    margin-right: 30px;
+  }
+}
+
+#team-section {
+  background-color: #fff;
+
+  h2 {
+    margin-top: 130px;
+    margin-bottom: 85px;
+
+    div {
+      background-color: #fff;
+    }
+  }
+
+  img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  p {
+    text-align: center;
+
+    &.name {
+     margin-top: 20px;   
+      margin-bottom: 0;
+    }
+
+    &.title {
+      font-size: 14px;
+      margin-top: 0;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+#contact-section {
+  background-color: #fff;
+
+  div {
+
+    p {
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+
+    @media screen and (min-width: 560px) {
+      a.mobile {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 559px) {
+      a.desktop {
+        display: none;
+      }
+    }
+  }
+}

@@ -19,7 +19,7 @@
       "mobile": false,
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.css",
-        "assets/styles/site.scss",
+        "assets/styles/base.scss",
         "assets/styles/styles.css",
         "assets/styles/utilities.scss"
       ],

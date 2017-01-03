@@ -1,0 +1,177 @@
+@import 'colors'; 
+
+@font-face {
+    font-family: 'Fira Sans Book';
+    src: url('../fonts/firasans-book-webfont.woff2') format('woff2'),
+         url('../fonts/firasans-book-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Sans Book';
+    src: url('../fonts/firasans-bookitalic-webfont.woff2') format('woff2'),
+         url('../fonts/firasans-bookitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/proximanova-light-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/proximanova-regular-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/proximanova-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.container {
+  width: 70%;
+  max-width: 700px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+h1 {
+    font-family: "Fira Sans", sans-serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: $blueprint-blue;
+  }
+
+h2 {
+  font-family: "Proxima Nova";
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: $blueprint-blue;
+}
+
+div, span, p {
+  font-family: "Fira Sans Book";
+  color: $gray;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.emphasis-text {
+  font-family: "Fira Sans", sans-serif;
+  color: black;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 40px;
+}
+
+#section-triangle {
+    width: 0;
+    height: 0;
+    border-bottom: 150px solid #fff;
+}
+
+.button-primary {
+  font-family: "Proxima Nova";
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: normal;
+  width: 288px;
+  margin-top: 30px;
+  margin-bottom: 70px;
+  color: #fff;
+  background-color: $blueprint-blue;
+  padding: 18px;
+  border-radius: 6px;
+  transition: background 0.3s ease-in-out, border 0.3s ease-in-out, padding 0.2s ease;
+  white-space:nowrap;
+
+  &:hover {
+    text-decoration: none;
+    background-color: #65a0ff;
+  }
+}
+
+.button-secondary {
+  font-family: "Proxima Nova";
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: normal;
+  width: 288px;
+  margin-top: 30px;
+  margin-bottom: 70px;
+  color: #fff;
+  background-color: $button-secondary;
+  padding: 16px 24px;
+  border-radius: 6px;
+  transition: background 0.3s ease-in-out, border 0.3s ease-in-out, padding 0.2s ease;
+  white-space:nowrap;
+
+  &:hover {
+    text-decoration: none;
+    background-color: #2DD7FF;
+  }
+}
+
+header {
+  background: linear-gradient(to right, $blueprint-blue, #40BAFB);
+  color: #fff;
+
+  .logo {
+    position: relative;
+    top: 50px;
+    right: 115px;
+  }
+
+  .logo-text {
+    position: relative;
+    padding: 0 15px 0 15px;
+    bottom: 50px;
+  }
+
+  .logo-text > h1 {
+    color: #fff;
+    display: inline-block;
+  }
+
+  .logo-text > div {
+    color: #fff;
+  }
+
+  .navigation-bar {
+    text-align: right;
+  }
+
+  .navigation-bar > li{
+    list-style: none;
+  }
+
+  .nav-link {
+    margin-left: 24px;
+  }
+
+  .nav-link > h2 {
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  
+  .nav-link {
+    display: inline-block;
+  }
+
+  .nav-link > h2 {
+    color: #FFF;
+  }
+  
+}
