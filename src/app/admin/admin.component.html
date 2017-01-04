@@ -1,3 +1,9 @@
+<div [ngStyle]="{ 'padding': '20px 0', 'text-align': 'right' }"
+     class="container">
+  <a (click)="logout()">
+    Logout
+  </a>
+</div>
 <div class="container">
   <h1>Students</h1>
   <div class="row" *ngFor="let status of statuses">

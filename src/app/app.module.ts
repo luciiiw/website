@@ -8,14 +8,18 @@ import { AdminComponent } from './admin/admin.component';
 import { AngularFireModule } from 'angularfire2';
 import { AppComponent } from './app.component';
 import { ApplicationSuccessComponent } from './application-success/application-success.component';
+import { AuthGuardService } from './services/auth-guard.service';
 import { CONFIG } from '../configs/config';
 import { EmailValidatorDirective } from './directives/validate-email.directive';
 import { FilterPipe } from './pipes/filter.pipe';
+import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
+import { NoAuthGuardService } from './services/no-auth-guard.service';
 import { NonProfitApplicationComponent } from './non-profit-application/non-profit-application.component';
 import { NonProfitDetailsComponent } from './non-profit-details/non-profit-details.component';
 import { StudentApplicationComponent } from './student-application/student-application.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +32,8 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
     StudentApplicationComponent,
     StudentDetailsComponent,
     NonProfitDetailsComponent,
-    ApplicationSuccessComponent
+    ApplicationSuccessComponent,
+    LoginComponent
   ],
   imports: [
     AngularFireModule.initializeApp(CONFIG.firebaseConfig),
@@ -38,16 +43,28 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: MainComponent },
-      { path: 'admin', component: AdminComponent },
+      {
+        path: 'admin', 
+        component: AdminComponent,
+        // canActivate: [AuthGuardService]
+      },
       { path: 'admin/student-details/:key', component: StudentDetailsComponent },
       { path: 'admin/non-profit-details/:key', component: NonProfitDetailsComponent },
+      { 
+        path: 'login', 
+        component: LoginComponent,
+        // canActivate: [NoAuthGuardService]
+      },
       { path: 'non-profits/application', component: NonProfitApplicationComponent },
       { path: 'non-profits/application/success', component: ApplicationSuccessComponent },
       { path: 'students/application', component: StudentApplicationComponent },
       { path: 'students/application/success', component: ApplicationSuccessComponent },
     ])
   ],
-  providers: [],
+  providers: [
+    AuthGuardService,
+    NoAuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

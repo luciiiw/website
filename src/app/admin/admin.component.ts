@@ -13,7 +13,7 @@ export class AdminComponent implements OnInit {
 
   statuses = ['pending', 'rejected', 'interviewed', 'joined'];
 
-  constructor(af: AngularFire) {
+  constructor(public af: AngularFire) {
     this.studentApplications = af.database.list('studentApplications/');
     this.nonProfitApplications = af.database.list('nonProfitApplications/');
   }
@@ -48,6 +48,10 @@ export class AdminComponent implements OnInit {
 
   deleteNonProfitApplication(key) {
     this.nonProfitApplications.remove(key);
+  }
+
+  logout() {
+    return this.af.auth.logout();
   }
 
   ngOnInit() {
