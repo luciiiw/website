@@ -14,11 +14,13 @@ export class NoAuthGuardService implements CanActivate {
   canActivate(): Observable<boolean> {
     return this.auth
       .take(1)
-      .map((authState: FirebaseAuthState) => !!authState)
-      .do(authenticated => {
-        if (authenticated) {
+      .map((authState: FirebaseAuthState) => {
+        if (!!authState) {
           this.router.navigate(['/admin']);
-        };
+          return false; 
+        }
+
+        return true;
       });
   }
 }

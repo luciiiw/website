@@ -46,14 +46,14 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
       {
         path: 'admin', 
         component: AdminComponent,
-        // canActivate: [AuthGuardService]
+        canActivate: [AuthGuardService]
       },
       { path: 'admin/student-details/:key', component: StudentDetailsComponent },
       { path: 'admin/non-profit-details/:key', component: NonProfitDetailsComponent },
       { 
         path: 'login', 
         component: LoginComponent,
-        // canActivate: [NoAuthGuardService]
+        canActivate: [NoAuthGuardService]
       },
       { path: 'non-profits/application', component: NonProfitApplicationComponent },
       { path: 'non-profits/application/success', component: ApplicationSuccessComponent },
