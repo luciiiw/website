@@ -16,6 +16,7 @@ import { NonProfitApplicationComponent } from './non-profit-application/non-prof
 import { NonProfitDetailsComponent } from './non-profit-details/non-profit-details.component';
 import { StudentApplicationComponent } from './student-application/student-application.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
+import { TeamPageComponent } from './team-page/team-page.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
     StudentApplicationComponent,
     StudentDetailsComponent,
     NonProfitDetailsComponent,
-    ApplicationSuccessComponent
+    ApplicationSuccessComponent,
+    TeamPageComponent
   ],
   imports: [
     AngularFireModule.initializeApp(CONFIG.firebaseConfig),
@@ -45,6 +47,7 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
       { path: 'non-profits/application/success', component: ApplicationSuccessComponent },
       { path: 'students/application', component: StudentApplicationComponent },
       { path: 'students/application/success', component: ApplicationSuccessComponent },
+      { path: 'team', component: TeamPageComponent },
     ])
   ],
   providers: [],
