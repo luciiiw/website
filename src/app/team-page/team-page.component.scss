@@ -1,26 +1,7 @@
-#about-section {
-  h2 {
-    margin-top: 58px;
-    margin-bottom: 65px;
-
-    div {
-      background-color: #fff;
-    }
-  }
-
-  img {
-    margin-top: 18px;
-    width: 100%;
-  }
-}
+@import '../../assets/styles/colors';
 
 #values-section {
-  background-color: #f7f9ff;
-
-  .value-icon {
-    height: 50px;
-    margin-top: 30px;
-  }
+  background-color: $baby-blue;
 
   p {
     margin-right: 30px;
@@ -28,14 +9,14 @@
 }
 
 #team-section {
-  background-color: #fff;
+  background-color: $white;
 
   h2 {
     margin-top: 130px;
     margin-bottom: 85px;
 
     div {
-      background-color: #fff;
+      background-color: $white;
     }
   }
 
@@ -51,8 +32,9 @@
     text-align: center;
 
     &.name {
-     margin-top: 20px;   
+      margin-top: 20px;   
       margin-bottom: 0;
+      color: $blueprint-blue;
     }
 
     &.title {
@@ -64,7 +46,7 @@
 }
 
 #contact-section {
-  background-color: #fff;
+  background-color: $white;
 
   div {
 
