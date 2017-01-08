@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { Router } from '@angular/router';
+import { delay } from 'lodash';
 
 @Component({
   selector: 'app-admin',
@@ -13,7 +15,7 @@ export class AdminComponent implements OnInit {
 
   statuses = ['pending', 'rejected', 'interviewed', 'joined'];
 
-  constructor(af: AngularFire) {
+  constructor(public af: AngularFire, public router: Router) {
     this.studentApplications = af.database.list('studentApplications/');
     this.nonProfitApplications = af.database.list('nonProfitApplications/');
   }
@@ -48,6 +50,11 @@ export class AdminComponent implements OnInit {
 
   deleteNonProfitApplication(key) {
     this.nonProfitApplications.remove(key);
+  }
+
+  logout(): void {
+    this.af.auth.logout();
+    delay(() => this.router.navigate(['/login']), 100);
   }
 
   ngOnInit() {
