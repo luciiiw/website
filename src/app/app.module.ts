@@ -17,6 +17,7 @@ import { MainComponent } from './main/main.component';
 import { NoAuthGuardService } from './services/no-auth-guard.service';
 import { NonProfitApplicationComponent } from './non-profit-application/non-profit-application.component';
 import { NonProfitDetailsComponent } from './non-profit-details/non-profit-details.component';
+import { ProjectsPageComponent } from './projects-page/projects-page.component';
 import { StudentApplicationComponent } from './student-application/student-application.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
 import { TeamPageComponent } from './team-page/team-page.component';
@@ -35,7 +36,8 @@ import { TeamPageComponent } from './team-page/team-page.component';
     NonProfitDetailsComponent,
     StudentApplicationComponent,
     StudentDetailsComponent,
-    TeamPageComponent
+    TeamPageComponent,
+    ProjectsPageComponent
   ],
   imports: [
     AngularFireModule.initializeApp(CONFIG.firebaseConfig),
@@ -59,6 +61,7 @@ import { TeamPageComponent } from './team-page/team-page.component';
       },
       { path: 'non-profits/application', component: NonProfitApplicationComponent },
       { path: 'non-profits/application/success', component: ApplicationSuccessComponent },
+      { path: 'projects', component: ProjectsPageComponent },
       { path: 'students/application', component: StudentApplicationComponent },
       { path: 'students/application/success', component: ApplicationSuccessComponent },
       { path: 'team', component: TeamPageComponent },
