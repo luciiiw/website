@@ -68,6 +68,52 @@
   text-transform: uppercase;
 }
 
+.circular {
+  border: 3px solid $blueprint-blue;
+  border-radius: 22px;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  bottom: 25px;
+}
+
+.shadow {
+  border: none;
+  background-color: rgba(0,120,248,0.3);
+  position: relative;
+  left: 7px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  top: 13px;
+}
+
+.circular > h2 {
+  margin: 0 auto;
+  line-height: 38px;
+}
+
+.phase-marker {
+  width: 15%;
+  display: inline-block;
+  float: left;
+
+  @media(max-width: 681px) {
+    display: none;
+  }
+}
+
+.phase-description {
+  display: inline-block;
+  width: 84%;
+  
+  @media(max-width: 681px) {
+    width: auto;
+  }
+}
+
 h1 {
     font-family: "Fira Sans", sans-serif;
     font-size: 48px;
