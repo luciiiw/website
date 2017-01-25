@@ -1,3 +1,5 @@
+@import 'colors';
+
 .u-padding-right-15 {
   padding-right: 15px;
 }
@@ -30,10 +32,26 @@
   margin-top: 30px;
 }
 
+.u-padding-0 {
+  padding: 0;
+}
+
 .u-padding-1em {
   padding: 1em;
 }
 
 .u-padding-bottom-70 {
   padding-bottom: 70px;
+}
+
+.u-color-baby-blue {
+  color: $baby-blue;
+}
+
+.u-color-blueprint-blue {
+  color: $blueprint-blue;
+}
+
+.u-color-black {
+  color: $black;
 }

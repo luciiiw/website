@@ -1,19 +1,25 @@
 <div class="container">
-  <div class="row u-margin-bottom-30">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-      <h2 style="letter-spacing: 1; line-height: 1em; height: auto; margin-bottom: 10px;">Non-profit Project Application</h2>
-      <p>Thanks for your interest in UW Blueprint! We are a team of students with a passion for solving technical problems for social good.</p>
-      <p>Please fill out the following application and a member of our team will get back to you as soon as possible. We look forward to working with you!</p>
-      <p>Please note: an application does not guarantee that your project will be selected for development.</p>
-    </div>
+  <div class="row u-margin-bottom-15">
+    <h1>non-profit project application</h1>
+  </div>
+  <div class="row">
+    <p>Thanks for your interest in UW Blueprint! We are a team of students with a passion for solving technical problems for social good.</p>
+  </div>
+  <div class="row">
+    <p>Please fill out the following application and a member of our team will get back to you as soon as possible. We look forward to working with you!</p>
+  </div>
+  <div class="row">
+    <p>Please note: an application does not guarantee that your project will be selected for development.</p>
   </div>
   <form class="form-group student-application" 
         [formGroup]="nonProfitApplicationForm" 
         (submit)="submitForm($event)">
-    <h4>Basic information</h4>
-    <p>Please provide some basic information about your organization</p>
     <div class="row">
-      <div class="col-sm-6 col-md-6 u-margin-bottom-25"
+      <h2 class="uppercase">Basic information</h2>
+      <p>Please provide some basic information about your organization:</p>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-6 u-margin-bottom-25 u-padding-0"
            [ngClass]="{ 
             'invalid': 
               !nonProfitApplicationForm.controls['organizationName'].valid &&
@@ -27,7 +33,7 @@
         <small *ngIf="!nonProfitApplicationForm.controls['organizationName'].valid &&
                       nonProfitApplicationForm.controls['organizationName'].touched">Required.</small>
       </div>
-      <div class="col-sm-6 col-md-6 u-margin-bottom-25"
+      <div class="col-sm-6 col-md-6 u-margin-bottom-25 u-padding-0"
            [ngClass]="{ 
             'invalid': 
               !nonProfitApplicationForm.controls['website'].valid &&
@@ -43,7 +49,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-12 col-md-12 u-margin-bottom-25"
+      <div class="col-sm-12 col-md-12 u-margin-bottom-25 u-padding-0"
            [ngClass]="{ 
             'invalid': 
               !nonProfitApplicationForm.controls['location'].valid &&
@@ -58,10 +64,12 @@
                       nonProfitApplicationForm.controls['location'].touched">Required.</small>
       </div>
     </div>
-    <h4>Contact information</h4>
-    <p>Please provide a point of contact for your organization</p>
     <div class="row">
-      <div class="col-sm-6 col-md-6 u-margin-bottom-25"
+      <h2 class="uppercase">Contact information</h2>
+      <p>Please provide a point of contact for your organization:</p>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-6 u-margin-bottom-25 u-padding-0"
            [ngClass]="{ 
             'invalid': 
               !nonProfitApplicationForm.controls['firstName'].valid &&
@@ -75,7 +83,7 @@
         <small *ngIf="!nonProfitApplicationForm.controls['firstName'].valid &&
                       nonProfitApplicationForm.controls['firstName'].touched">Required.</small>
       </div>
-      <div class="col-sm-6 col-md-6 u-margin-bottom-25"
+      <div class="col-sm-6 col-md-6 u-margin-bottom-25 u-padding-0"
            [ngClass]="{ 
             'invalid': 
               !nonProfitApplicationForm.controls['lastName'].valid &&
@@ -91,7 +99,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-12 col-md-12 u-margin-bottom-25"
+      <div class="col-sm-12 col-md-12 u-margin-bottom-25 u-padding-0"
            [ngClass]="{ 
             'invalid': 
               !nonProfitApplicationForm.controls['email'].valid &&
@@ -108,7 +116,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-12 col-md-12 u-margin-bottom-25"
+      <div class="col-sm-12 col-md-12 u-margin-bottom-25 u-padding-0"
            [ngClass]="{ 
             'invalid': 
               !nonProfitApplicationForm.controls['phoneNumber'].valid &&
@@ -126,26 +134,26 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-12 col-md-12">
-        <label for="preferredContactMethod">Preferred Contact Method*</label>
-        <div id="preferredContactMethod" *ngFor="let c of preferredContactMethods"
-             class="col-sm-4 col-md-4 u-margin-bottom-25"> 
-          <label attr.for="{{c.name}}">
-            <input type="checkbox"
-                   id="{{c.name}}"
-                   value="{{c.value}}"
-                   formControlName="preferredContactMethods"
-                   [(ngModel)]="c.selected"/>
-            <span [innerHtml]="c.name"></span>
-          </label>
-        </div> 
-      </div>
+      <label for="preferredContactMethod">Preferred Contact Method*</label>
+      <div id="preferredContactMethod" *ngFor="let c of preferredContactMethods"
+           class="col-sm-4 col-md-4 u-margin-bottom-25 u-padding-0"> 
+        <label attr.for="{{c.name}}">
+          <input type="checkbox"
+                 id="{{c.name}}"
+                 value="{{c.value}}"
+                 formControlName="preferredContactMethods"
+                 [(ngModel)]="c.selected"/>
+          <span class="u-color-black" [innerHtml]="c.name"></span>
+        </label>
+      </div> 
     </div>
-    <h4>Short answers</h4>
-    <p>Please answer the following questions in 1 or 2 sentences.</p>
+    <div class="row">
+      <h2 class="uppercase">Short answers</h2>
+      <p>Please answer the following questions in 1 or 2 sentences.</p>
+    </div>
     <div *ngFor="let q of shortAnswers; let i = index" 
          class="row">
-      <div class="col-sm-12 col-md-12 u-margin-bottom-25"
+      <div class="col-sm-12 col-md-12 u-margin-bottom-25 u-padding-0"
            [ngClass]="{ 
             'invalid': 
               !nonProfitApplicationForm.controls['question' + (i + 1)].valid &&
@@ -160,7 +168,7 @@
                       nonProfitApplicationForm.controls['question' + (i + 1)].touched">Required.</small>
       </div>
     </div>
-    <div class="row u-text-align-right u-padding-right-15">
+    <div class="row u-text-align-right">
       <div> 
         <button class="btn btn-default btn-lg" 
                 type="submit"

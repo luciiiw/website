@@ -68,6 +68,10 @@
   text-transform: uppercase;
 }
 
+.lowercase {
+  text-transform: lowercase;
+}
+
 .circular {
   border: 3px solid $blueprint-blue;
   border-radius: 22px;
@@ -119,7 +123,7 @@ h1 {
     font-size: 48px;
     font-weight: 200;
     color: $blueprint-blue;
-  }
+}
 
 h2 {
   font-family: "Proxima Nova";
@@ -134,6 +138,12 @@ div, span, p {
   color: $gray;
   font-size: 18px;
   line-height: 26px;
+}
+
+label {
+  font-family: "Fira Sans Book";
+  color: $black;
+  font-size: 14px;
 }
 
 .emphasis-text {
@@ -280,5 +290,4 @@ header {
   .nav-link > h2 {
     color: #FFF;
   }
-  
 }

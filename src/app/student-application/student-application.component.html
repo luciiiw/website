@@ -1,23 +1,35 @@
 <div class="container">
   <div class="row u-margin-bottom-30">
     <div class="col-md-12 col-sm-12 col-xs-12">
-      <h2 style="letter-spacing: 1; line-height: 1em; height: auto; margin-bottom: 10px;">Student Application</h2>
-      <p>Thanks for your interest in UW Blueprint! We are always looking for UW students to take part in our club activities and join our talented team.</p>
-      <p>We are looking for the following positions:</p>
-      <h3>Project developer</h3>
-      <p>A project developer works on a specific project for a non-profit, led by a team lead. This includes mostly dev work, and potentially some architecture design, and/or visual design.</p> 
-      <h3>Project developer (mentor)</h3>
-      <p>A project developer who is also a mentor has the same duties as a project developer, but in addition, they pair program with an inexperienced developer.</p>
-      <h3>Project lead</h3>
-      <p>A project lead is responsible for organizing other team members and getting the project done. This can include creating tasks, assigning priorities and giving time estimates, or just following up with team members to make sure work is on track.</p>
+      <div class="row">
+        <h1 class="u-margin-bottom-15">student application</h1>
+      </div>
+      <div class="row">
+        <p>Thanks for your interest in UW Blueprint! We are always looking for UW students to take part in our club activities and join our talented team.</p>
+        <p>We are looking to fill the following positions:</p>
+      </div>
+      <div class="row">
+        <div class="emphasis-text u-color-blueprint-blue">Project developer</div>
+        <p>A project developer works on a specific project for a non-profit, led by a team lead. This includes mostly dev work, and potentially some architecture design, and/or visual design.</p> 
+      </div>
+      <div class="row">
+        <div class="emphasis-text u-color-blueprint-blue">Project developer (mentor)</div>
+        <p>A project developer who is also a mentor has the same duties as a project developer, but in addition, they pair program with an inexperienced developer.</p>
+      </div>
+      <div class="row">
+        <div class="emphasis-text u-color-blueprint-blue">Project lead</div>
+        <p>A project lead is responsible for organizing other team members and getting the project done. This can include creating tasks, assigning priorities and giving time estimates, or just following up with team members to make sure work is on track.</p>
+      </div>
     </div>
   </div>
   <form class="form-group student-application" 
         [formGroup]="studentApplicationForm" 
         (submit)="submitForm($event)">
-    <h4>Basic information</h4>
     <div class="row">
-      <div class="col-sm-6 col-md-6 u-margin-bottom-25"
+      <h2 class="uppercase">Basic information</h2>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-6 u-margin-bottom-25 u-padding-0"
            [ngClass]="{ 
             'invalid': 
               !studentApplicationForm.controls['firstName'].valid &&
@@ -31,7 +43,7 @@
         <small *ngIf="!studentApplicationForm.controls['firstName'].valid &&
                       studentApplicationForm.controls['firstName'].touched">Required.</small>
       </div>
-      <div class="col-sm-6 col-md-6 u-margin-bottom-25"
+      <div class="col-sm-6 col-md-6 u-margin-bottom-25 u-padding-0"
            [ngClass]="{ 
             'invalid': 
               !studentApplicationForm.controls['lastName'].valid &&
@@ -47,7 +59,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-12 col-md-12 u-margin-bottom-25"
+      <div class="col-sm-12 col-md-12 u-margin-bottom-25 u-padding-0"
            [ngClass]="{ 
             'invalid': 
               !studentApplicationForm.controls['email'].valid &&
@@ -64,7 +76,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-6 col-md-6 u-margin-bottom-25"
+      <div class="col-sm-6 col-md-6 u-margin-bottom-25 u-padding-0"
            [ngClass]="{ 
             'invalid': 
               !studentApplicationForm.controls['program'].valid &&
@@ -78,7 +90,7 @@
         <small *ngIf="!studentApplicationForm.controls['program'].valid &&
                       studentApplicationForm.controls['program'].touched">Required.</small>
       </div>
-      <div class="col-sm-6 col-md-6 u-margin-bottom-25"
+      <div class="col-sm-6 col-md-6 u-margin-bottom-25 u-padding-0"
            [ngClass]="{ 
             'invalid': 
               !studentApplicationForm.controls['academicYear'].valid &&
@@ -96,7 +108,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-12 col-md-12 u-margin-bottom-25"
+      <div class="col-sm-12 col-md-12 u-margin-bottom-25 u-padding-0"
            [ngClass]="{ 
             'invalid': 
               !studentApplicationForm.controls['resume'].valid &&
@@ -111,11 +123,13 @@
                (change)="uploadResume($event)">
       </div>
     </div>
-    <h4>Position preference</h4>
-    <p>Please select the positions you are interested in:*</p>
+    <div class="row">
+      <h2 class="uppercase">Position preference</h2>
+      <p>Please select the positions you are interested in:*</p>
+    </div>
     <div class="row">
       <div *ngFor="let position of positions"
-           class="col-sm-4 col-md-4 u-margin-bottom-25"
+           class="col-sm-4 col-md-4 u-margin-bottom-25 u-padding-0"
            [ngClass]="{ 
             'invalid': 
               !studentApplicationForm.controls['positions'].valid &&
@@ -127,17 +141,19 @@
                    id="{{position.name}}"
                    formControlName="positions"
                    [(ngModel)]="position.selected"/>
-            <span [innerHtml]="position.name"></span>
+            <span class="u-color-black" [innerHtml]="position.name"></span>
           </label>
       </div> 
       <small *ngIf="!studentApplicationForm.controls['positions'].valid &&
                     studentApplicationForm.controls['positions'].touched">Required. Please select at least one option.</small>
     </div>
-    <h4>Short answers</h4>
-    <p>Please answer the following questions in 1 or 2 sentences. It's okay if you don't have an answer for every question!</p>
+    <div class="row">
+      <h2 class="uppercase">Short answers</h2>
+      <p>Please answer the following questions in 1 or 2 sentences. It's okay if you don't have an answer for every question!</p>
+    </div>
     <div *ngFor="let q of shortAnswers; let i = index" 
          class="row">
-      <div class="col-sm-12 col-md-12 u-margin-bottom-25"
+      <div class="col-sm-12 col-md-12 u-margin-bottom-25 u-padding-0"
            [ngClass]="{ 
             'invalid': 
               !studentApplicationForm.controls['question' + (i + 1)].valid &&
@@ -152,9 +168,9 @@
                       studentApplicationForm.controls['question' + (i + 1)].touched">Required.</small>
       </div>
     </div>
-    <div class="row u-text-align-right u-padding-right-15">
+    <div class="row u-text-align-right">
       <div> 
-        <button class="btn btn-default btn-lg" 
+        <button class="btn btn-default btn-lg"
                 type="submit"
                 [disabled]="!studentApplicationForm.valid">Apply</button>
       </div>
