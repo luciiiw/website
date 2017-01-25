@@ -5,9 +5,11 @@
   </a>
 </div>
 <div class="container">
-  <h1>Students</h1>
+  <div class="row">
+    <h1 class="lowercase">Students</h1>
+  </div>
   <div class="row" *ngFor="let status of statuses">
-    <h3 [innerHtml]="status"></h3>
+    <h2 class="uppercase" [innerHtml]="status"></h2>
     <table class="table">
       <thead>
         <tr>
@@ -39,9 +41,11 @@
   </div>
 </div>
 <div class="container"> 
-  <h1>Non-profits</h1>
+  <div class="row">
+    <h1 class="lowercase">nonprofits</h1>
+  </div>
   <div class="row" *ngFor="let status of statuses">
-    <h3 [innerHtml]="status"></h3>
+    <h2 class="uppercase" [innerHtml]="status"></h2>
     <table class="table">
       <thead>
         <tr>
