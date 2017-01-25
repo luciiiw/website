@@ -1,0 +1,161 @@
+<header>
+  <div class="container container-lg">
+    <ul class="navigation-bar">
+      <li class="navigation-section logo-link">
+        <a [routerLink]="['']">
+          <img class="logo-small u-margin-right-15" src="assets/logos/bp_small_white_2x.png"/>
+          <div class="logo-text-small">
+            <h1>Blueprint</h1>
+          </div>
+        </a>
+      </li> 
+      <li class="navigation-section primary">
+        <a class="nav-link" [routerLink]="['/projects']"><h2>Projects</h2></a>
+        <a class="nav-link" [routerLink]="['/nonprofits']"><h2>Nonprofits</h2></a>
+        <a class="nav-link" [routerLink]="['/students']"><h2>Students</h2></a>
+        <a class="nav-link" [routerLink]="['/team']"><h2>Team</h2></a>
+      </li>
+    </ul> 
+  </div>
+  <div class="container container-lg u-margin-top-30">
+     <div class="logo-text">
+        <h1>students</h1>
+        <div class="u-margin-bottom-30">We are looking for talented University of Waterloo students who are motivated to empower nonprofits with their skills and abilities for social good.</div>
+        <div>
+          <a class="button-secondary uppercase" [routerLink]="['/students/application']">Apply as a student</a>
+        </div>
+     </div>
+  </div>
+  <div id="section-triangle"></div>
+</header>
+
+<section id="criteria-section">
+  <div class="container">
+    <div class="row u-margin-bottom-30">
+      <h1>decision criteria</h1>
+    </div>
+    <div class="row">
+      <div>We want to help as many organizations as possible. Unfortunately, we do not have the capacity to accept every project due to our limited resources. These are the primary criteria we use to determine project fit:</div>
+    </div>
+    <div class="row"> 
+      <h2 class="uppercase">1. Impact</h2>
+      <div>How much will the project impact the community? We prefer projects that will provide the maximal benefit to the target community.</div>
+    </div>
+    <div class="row"> 
+      <h2 class="uppercase">2. Necessity</h2>
+      <div>How vital is the project to the non-profit organization, and does the organization have other means to complete the project? We want to ensure that we are helping organizations that truly need our services.</div> 
+    </div>
+    <div class="row">
+      <h2 class="uppercase">3. Scope</h2>
+      <div>Is completing the project feasible within our timeline? We want to ensure that we can finish the project and deliver quality results by then end of our development cycle.</div>
+    </div>
+    <div class="row">
+      <h2 class="uppercase">4. Technical Fit</h2>
+      <div>Is the project technically challenging and fit well with our team's areas of expertise?</div>
+    </div>
+    <div class="row">
+      <h2 class="uppercase">5. Credibility</h2>
+      <div>Is it clear that the project will have an impact? We like to see evidence that supports this!</div> 
+    </div>
+  </div>
+</section>
+
+<section id="timeline-section">
+  <div id="section-triangle2"></div>
+
+  <div class="container u-padding-bottom-70">
+    <div class="row">
+      <h1>timeline</h1>
+    </div>
+    <div class="row">
+      <div class="phase-marker">
+        <div class="circular shadow"></div>
+        <div class="circular">
+          <h2>1</h2>
+        </div>
+      </div>
+      <div class="phase-description">
+        <h2 class="uppercase">Phase 1</h2>
+        <div class="emphasis-text">Nonprofit/team lead project discussion</div>
+        <p>
+          We work with the nonprofit to understand the project in great depth and scope out the minimum viable product (MVP). Once we agree on the MVP, the project lead will write up a statement of work to be shared with the nonprofit. 
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="phase-marker">
+        <div class="circular shadow"></div>
+        <div class="circular">
+          <h2>2</h2>
+        </div>
+      </div>
+      <div class="phase-description">
+        <h2 class="uppercase">Phase 2</h2>
+        <div class="emphasis-text">Building the Minimum Viable Product (MVP)</div>
+        <p>
+          During this phase, we work hard to get the MVP up and running. We will consistently stay in touch with the nonprofit to ensure that the development phase goes smoothly and to also make sure that we are always in sync with the nonprofit.  
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="phase-marker">
+        <div class="circular shadow"></div>
+        <div class="circular">
+          <h2>3</h2>
+        </div>
+      </div>
+      <div class="phase-description">
+        <h2 class="uppercase">Phase 3</h2>
+        <div class="emphasis-text">User testing</div>
+        <p>
+          This phase is a four month period where we release the MVP to see how the product is received. Any critical problems that break the product are fixed immediately. Additionally, we will take note of any bugs, UX issues, and feature requests during this time.
+        </p>
+      </div>
+    </div>
+    <div class="row u-margin-bottom-30">
+      <div class="phase-marker">
+        <div class="circular shadow"></div>
+        <div class="circular">
+          <h2>4</h2>
+        </div>
+      </div>
+      <div class="phase-description">
+        <h2 class="uppercase">Phase 4</h2>
+        <div class="emphasis-text">Product polish and hand-off</div>
+        <p>
+          The last phase involves intensive development. We make improvements on the product based on the feedback received from phase 3. This phase is designed to completely finish the product so that it is ready to be delivered to the nonprofit. Upon completion, we meet with the nonprofit to hand off the product and to figure out how maintenence of the product is to be handled. 
+        </p>
+      </div>
+    </div>
+  </div>
+  <div id="section-triangle3"></div>
+</section>
+
+<section class="u-padding-bottom-70" id="faq-section">
+  <div class="container">
+    <div class="u-margin-bottom-50">
+      <div class="row">
+        <h1>faq</h1>
+      </div>
+      <div class="row">
+        <h2 class="uppercase">How often do project teams and nonprofits meet?</h2>
+        <div>
+          We plan to have our project lead and the nonprofit meet on a weekly or biweekly basis, depending on the flexibility of both parties, to sync up and discuss progress. 
+        </div>
+      </div>
+      <div class="row">
+        <h2 class="uppercase">How does blueprint ensure success?</h2>
+        <div>
+          We recruit the brightest and most hard-working students at the University of Waterloo to work with the nonprofits and deliver high quality products. Everyone is dedicated to helping nonprofit organizations and motivated by the idea of social good. We make a commitment to excellence and make sure that we put forward our best effort when it comes to working with nonprofits and their projects. 
+        </div>
+      </div>
+    </div>
+    <div class="u-margin-bottom-15 row">
+      <h1>apply</h1>
+    </div>
+    <div class="row">
+      <div class="u-margin-bottom-30">If you are a University of Waterloo student that fit the above criteria, please apply to join us! We will work hard to get back to you as soon as possible. We look forward to hearing from you!</div>
+      <a class="button-primary uppercase" [routerLink]="['application']">Apply as a student</a>
+    </div>
+  </div>
+</section>

@@ -21,6 +21,7 @@ import { NonProfitsPageComponent } from './non-profits-page/non-profits-page.com
 import { ProjectsPageComponent } from './projects-page/projects-page.component';
 import { StudentApplicationComponent } from './student-application/student-application.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
+import { StudentsPageComponent } from './students-page/students-page.component';
 import { TeamPageComponent } from './team-page/team-page.component';
 
 
@@ -39,7 +40,8 @@ import { TeamPageComponent } from './team-page/team-page.component';
     StudentDetailsComponent,
     TeamPageComponent,
     ProjectsPageComponent,
-    NonProfitsPageComponent
+    NonProfitsPageComponent,
+    StudentsPageComponent
   ],
   imports: [
     AngularFireModule.initializeApp(CONFIG.firebaseConfig),
@@ -65,6 +67,7 @@ import { TeamPageComponent } from './team-page/team-page.component';
       { path: 'nonprofits/application', component: NonProfitApplicationComponent },
       { path: 'nonprofits/application/success', component: ApplicationSuccessComponent },
       { path: 'projects', component: ProjectsPageComponent },
+      { path: 'students', component: StudentsPageComponent },
       { path: 'students/application', component: StudentApplicationComponent },
       { path: 'students/application/success', component: ApplicationSuccessComponent },
       { path: 'team', component: TeamPageComponent },
