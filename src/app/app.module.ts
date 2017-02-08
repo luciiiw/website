@@ -12,6 +12,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { CONFIG } from '../configs/config';
 import { EmailValidatorDirective } from './directives/validate-email.directive';
 import { FilterPipe } from './pipes/filter.pipe';
+import { HeaderNavComponent } from './header-nav/header-nav.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { NoAuthGuardService } from './services/no-auth-guard.service';
@@ -24,7 +25,6 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
 import { StudentsPageComponent } from './students-page/students-page.component';
 import { TeamPageComponent } from './team-page/team-page.component';
 
-
 @NgModule({
   declarations: [
     AdminComponent,
@@ -32,6 +32,7 @@ import { TeamPageComponent } from './team-page/team-page.component';
     ApplicationSuccessComponent,
     EmailValidatorDirective,
     FilterPipe,
+    HeaderNavComponent,
     LoginComponent,
     MainComponent,
     NonProfitApplicationComponent,
