@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'media-breakpoints';
 
 .u-display-block {
   display: block;
@@ -58,4 +59,16 @@
 
 .u-color-black {
   color: $black;
+}
+
+.u-mobile-hide {
+    @media (max-width: $screen-xs-max) {
+        display: none !important;
+    }
+}
+
+.u-mobile-show {
+    @media (min-width: $screen-sm) {
+        display: none !important;
+    }
 }
