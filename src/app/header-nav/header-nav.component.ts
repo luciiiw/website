@@ -24,7 +24,7 @@ export class HeaderNavComponent implements AfterViewInit {
         link: '/projects'
       },
       {
-        name: 'Non Profits',
+        name: 'Nonprofits',
         link: '/nonprofits'
       },
       {
