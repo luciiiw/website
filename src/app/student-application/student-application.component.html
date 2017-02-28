@@ -10,15 +10,15 @@
       </div>
       <div class="row">
         <div class="emphasis-text u-color-blueprint-blue">Project developer</div>
-        <p>A project developer works on a specific project for a non-profit, led by a team lead. This includes mostly dev work, and potentially some architecture design, and/or visual design.</p> 
+        <p>A project developer works on a specific project for a non-profit, led by a team lead. This role is centered around software development along with contributions to product and UI design.</p>
       </div>
       <div class="row">
         <div class="emphasis-text u-color-blueprint-blue">Project developer (mentor)</div>
-        <p>A project developer who is also a mentor has the same duties as a project developer, but in addition, they pair program with an inexperienced developer.</p>
+        <p>A project developer mentor is expected to perform the same duties as a project developer with the additional responsibility of mentoring an inexperienced developer. This can include (but is not limited to) onboarding, training, and pair programming.</p>
       </div>
       <div class="row">
         <div class="emphasis-text u-color-blueprint-blue">Project lead</div>
-        <p>A project lead is responsible for organizing other team members and getting the project done. This can include creating tasks, assigning priorities and giving time estimates, or just following up with team members to make sure work is on track.</p>
+        <p>A project lead is responsible for planning and building the project roadmap to guide the developers in getting the project done. Creating and assigning tasks, mapping out priorities, giving time estimates, keeping track of progress, and following up with team members are examples of tasks that a project lead is expected to carry out.</p>
       </div>
     </div>
   </div>
@@ -29,7 +29,7 @@
       <h2 class="uppercase">Basic information</h2>
     </div>
     <div class="row">
-      <div class="col-sm-6 col-md-6 u-margin-bottom-25 u-padding-0"
+      <div class="col-sm-6 col-md-6 u-margin-bottom-25 u-padding-right-only-10"
            [ngClass]="{ 
             'invalid': 
               !studentApplicationForm.controls['firstName'].valid &&
@@ -43,7 +43,7 @@
         <small *ngIf="!studentApplicationForm.controls['firstName'].valid &&
                       studentApplicationForm.controls['firstName'].touched">Required.</small>
       </div>
-      <div class="col-sm-6 col-md-6 u-margin-bottom-25 u-padding-0"
+      <div class="col-sm-6 col-md-6 u-margin-bottom-25 u-padding-right-only-10"
            [ngClass]="{ 
             'invalid': 
               !studentApplicationForm.controls['lastName'].valid &&
@@ -59,7 +59,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-12 col-md-12 u-margin-bottom-25 u-padding-0"
+      <div class="col-sm-12 col-md-12 u-margin-bottom-25 u-padding-right-only-10"
            [ngClass]="{ 
             'invalid': 
               !studentApplicationForm.controls['email'].valid &&
@@ -76,7 +76,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-6 col-md-6 u-margin-bottom-25 u-padding-0"
+      <div class="col-sm-6 col-md-6 u-margin-bottom-25 u-padding-right-only-10"
            [ngClass]="{ 
             'invalid': 
               !studentApplicationForm.controls['program'].valid &&
@@ -90,7 +90,7 @@
         <small *ngIf="!studentApplicationForm.controls['program'].valid &&
                       studentApplicationForm.controls['program'].touched">Required.</small>
       </div>
-      <div class="col-sm-6 col-md-6 u-margin-bottom-25 u-padding-0"
+      <div class="col-sm-6 col-md-6 u-margin-bottom-25 u-padding-right-only-10"
            [ngClass]="{ 
             'invalid': 
               !studentApplicationForm.controls['academicYear'].valid &&
@@ -108,7 +108,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-12 col-md-12 u-margin-bottom-25 u-padding-0"
+      <div class="col-sm-12 col-md-12 u-margin-bottom-25 u-padding-right-only-10"
            [ngClass]="{ 
             'invalid': 
               !studentApplicationForm.controls['resume'].valid &&
@@ -129,7 +129,7 @@
     </div>
     <div class="row">
       <div *ngFor="let position of positions"
-           class="col-sm-4 col-md-4 u-margin-bottom-25 u-padding-0"
+           class="col-sm-4 col-md-4 u-margin-bottom-25 u-padding-right-only-10"
            [ngClass]="{ 
             'invalid': 
               !studentApplicationForm.controls['positions'].valid &&
@@ -153,7 +153,7 @@
     </div>
     <div *ngFor="let q of shortAnswers; let i = index" 
          class="row">
-      <div class="col-sm-12 col-md-12 u-margin-bottom-25 u-padding-0"
+      <div class="col-sm-12 col-md-12 u-margin-bottom-25 u-padding-right-only-10"
            [ngClass]="{ 
             'invalid': 
               !studentApplicationForm.controls['question' + (i + 1)].valid &&
