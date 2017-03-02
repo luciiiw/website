@@ -87,6 +87,6 @@ export class NonProfitApplicationComponent {
 
     const promise = this.applications.push(this.nonProfitApplicationForm.value);
     promise
-      .then(_ => this.router.navigate(['non-profits/application/success'])); 
+      .then(_ => this.router.navigate(['nonprofits/application/success'])); 
   }
 }
