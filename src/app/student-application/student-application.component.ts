@@ -21,7 +21,8 @@ export class StudentApplicationComponent {
   positions = [
     { name: 'Project Developer', value: '1', selected: false },
     { name: 'Project Developer (mentor)', value: '2', selected: false },
-    { name: 'Project Lead', value: '3', selected: false }
+    { name: 'Project Lead', value: '3', selected: false },
+    { name: 'External VP', value: '4', selected: false }
   ];
 
   shortAnswers = [
