@@ -32,7 +32,11 @@ export class AdminComponent implements OnInit {
     this.studentApplications.update(key, update);
   }
 
-  deleteStudentApplication(key) {
+  deleteStudentApplication(key, name) {
+    const confirm = window.confirm(`Are you sure you want to delete ${name}?`);
+    if (!confirm) {
+      return;
+    }
     this.studentApplications.remove(key);
   }
 
@@ -48,7 +52,11 @@ export class AdminComponent implements OnInit {
     this.nonProfitApplications.update(key, update);
   }
 
-  deleteNonProfitApplication(key) {
+  deleteNonProfitApplication(key, name) {
+    const confirm = window.confirm(`Are you sure you want to delete ${name}?`);
+    if (!confirm) {
+      return;
+    }
     this.nonProfitApplications.remove(key);
   }
 

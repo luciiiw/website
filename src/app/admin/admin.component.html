@@ -28,7 +28,7 @@
             <a [routerLink]="['/admin/student-details', a.$key]">Details</a>
           </td>
           <td>
-            <button class="btn btn-default btn-sm" (click)='deleteStudentApplication(a.$key)'>Delete</button>
+            <button class="btn btn-default btn-sm" (click)="deleteStudentApplication(a.$key, (a.firstName + ' ' + a.lastName))">Delete</button>
           </td>
           <td>
             <select (change)="onStudentStatusSelect($event, a.$key)">
@@ -64,7 +64,7 @@
             <a [routerLink]="['/admin/non-profit-details', a.$key]">Details</a>
           </td>
           <td>
-            <button class="btn btn-default btn-sm" (click)='deleteNonProfitApplication(a.$key)'>Delete</button>
+            <button class="btn btn-default btn-sm" (click)='deleteNonProfitApplication(a.$key, a.organizationName)'>Delete</button>
           </td>
           <td>
             <select (change)="onNonProfitStatusSelect($event, a.$key)">
