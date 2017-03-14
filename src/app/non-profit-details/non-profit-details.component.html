@@ -1,5 +1,7 @@
-<a [routerLink]="['/admin']">Go back</a>
 <div class="container" *ngFor="let a of application | async">
+  <div class="row">
+    <a [routerLink]="['/admin']">Go back</a>
+  </div>
   <div class="row u-margin-bottom-30">
     <h1 class="lowercase">{{ a.organizationName }}</h1>
   </div>
