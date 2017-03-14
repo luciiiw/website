@@ -251,7 +251,7 @@ header {
 
     @media (min-width: $screen-sm) {
       bottom: 50px;
-      top: 0;
+      top: initial;
     }
   }
 
