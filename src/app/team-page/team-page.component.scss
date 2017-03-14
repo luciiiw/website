@@ -1,0 +1,62 @@
+@import '../../assets/styles/colors';
+
+#team-section {
+  background-color: $white;
+
+  h2 {
+    margin-top: 130px;
+    margin-bottom: 85px;
+
+    div {
+      background-color: $white;
+    }
+  }
+
+  img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  p {
+    text-align: center;
+
+    &.name {
+      margin-top: 20px;   
+      margin-bottom: 0;
+      color: $blueprint-blue;
+    }
+
+    &.title {
+      font-size: 14px;
+      margin-top: 0;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+#contact-section {
+  background-color: $white;
+
+  div {
+
+    p {
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+
+    @media screen and (min-width: 560px) {
+      a.mobile {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 559px) {
+      a.desktop {
+        display: none;
+      }
+    }
+  }
+}

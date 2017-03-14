@@ -1,0 +1,179 @@
+<div class="container">
+  <div class="row u-margin-bottom-15">
+    <h1>non-profit project application</h1>
+  </div>
+  <div class="row">
+    <p>Thanks for your interest in UW Blueprint! We are a team of students with a passion for solving technical problems for social good.</p>
+  </div>
+  <div class="row">
+    <p>Please fill out the following application and a member of our team will get back to you as soon as possible. We look forward to working with you!</p>
+  </div>
+  <div class="row">
+    <p>Please note: an application does not guarantee that your project will be selected for development.</p>
+  </div>
+  <form class="form-group student-application" 
+        [formGroup]="nonProfitApplicationForm" 
+        (submit)="submitForm($event)">
+    <div class="row">
+      <h2 class="uppercase">Basic information</h2>
+      <p>Please provide some basic information about your organization:</p>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-6 u-margin-bottom-25 u-padding-right-only-10"
+           [ngClass]="{ 
+            'invalid': 
+              !nonProfitApplicationForm.controls['organizationName'].valid &&
+              nonProfitApplicationForm.controls['organizationName'].touched
+            }">
+        <label for="organizationName">Organization Name*</label>
+        <input id="organizationName" 
+               type="text" 
+               formControlName="organizationName" 
+               placeholder="e.g. UW Blueprint">
+        <small *ngIf="!nonProfitApplicationForm.controls['organizationName'].valid &&
+                      nonProfitApplicationForm.controls['organizationName'].touched">Required.</small>
+      </div>
+      <div class="col-sm-6 col-md-6 u-margin-bottom-25 u-padding-right-only-10"
+           [ngClass]="{ 
+            'invalid': 
+              !nonProfitApplicationForm.controls['website'].valid &&
+              nonProfitApplicationForm.controls['website'].touched
+            }">
+        <label for="website">Website*</label>
+        <input id="website" 
+               type="text" 
+               formControlName="website" 
+               placeholder="e.g. https://uwblueprint.org">
+        <small *ngIf="!nonProfitApplicationForm.controls['website'].valid &&
+                      nonProfitApplicationForm.controls['website'].touched">Required.</small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 u-margin-bottom-25 u-padding-right-only-10"
+           [ngClass]="{ 
+            'invalid': 
+              !nonProfitApplicationForm.controls['location'].valid &&
+              nonProfitApplicationForm.controls['location'].touched
+            }">
+        <label for="location">Location*</label>
+        <input id="location"
+               type="text"
+               formControlName="location"
+               placeholder="e.g. Waterloo, ON">
+        <small *ngIf="!nonProfitApplicationForm.controls['location'].valid &&
+                      nonProfitApplicationForm.controls['location'].touched">Required.</small>
+      </div>
+    </div>
+    <div class="row">
+      <h2 class="uppercase">Contact information</h2>
+      <p>Please provide a point of contact for your organization:</p>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-6 u-margin-bottom-25 u-padding-right-only-10"
+           [ngClass]="{ 
+            'invalid': 
+              !nonProfitApplicationForm.controls['firstName'].valid &&
+              nonProfitApplicationForm.controls['firstName'].touched
+            }">
+        <label for="firstName">First Name*</label>
+        <input id="firstName" 
+               type="text" 
+               formControlName="firstName" 
+               placeholder="e.g. John, Jane">
+        <small *ngIf="!nonProfitApplicationForm.controls['firstName'].valid &&
+                      nonProfitApplicationForm.controls['firstName'].touched">Required.</small>
+      </div>
+      <div class="col-sm-6 col-md-6 u-margin-bottom-25 u-padding-right-only-10"
+           [ngClass]="{ 
+            'invalid': 
+              !nonProfitApplicationForm.controls['lastName'].valid &&
+              nonProfitApplicationForm.controls['lastName'].touched
+            }">
+        <label for="lastName">Last Name*</label>
+        <input id="lastName" 
+               type="text" 
+               formControlName="lastName" 
+               placeholder="e.g. Smith">
+        <small *ngIf="!nonProfitApplicationForm.controls['lastName'].valid &&
+                      nonProfitApplicationForm.controls['lastName'].touched">Required.</small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 u-margin-bottom-25 u-padding-right-only-10"
+           [ngClass]="{ 
+            'invalid': 
+              !nonProfitApplicationForm.controls['email'].valid &&
+              nonProfitApplicationForm.controls['email'].touched
+            }">
+        <label for="email">Email*</label>
+        <input id="email"
+               type="email"
+               formControlName="email"
+               placeholder="e.g. example@domain.com"
+               appValidateEmail>
+        <small *ngIf="!nonProfitApplicationForm.controls['email'].valid &&
+                      nonProfitApplicationForm.controls['email'].touched">Required. Please enter your email in 'example@domain.com' format.</small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 u-margin-bottom-25 u-padding-right-only-10"
+           [ngClass]="{ 
+            'invalid': 
+              !nonProfitApplicationForm.controls['phoneNumber'].valid &&
+              nonProfitApplicationForm.controls['phoneNumber'].touched
+            }">
+        <label for="phoneNumber">Phone Number*</label>
+        <input id="phoneNumber"
+               type="text"
+               formControlName="phoneNumber"
+               placeholder="e.g. 1-123-456-7890">
+        <small *ngIf="nonProfitApplicationForm.controls['phoneNumber'].hasError('required') &&
+                      nonProfitApplicationForm.controls['phoneNumber'].touched">Required.</small>
+        <small *ngIf="nonProfitApplicationForm.controls['phoneNumber'].hasError('pattern') &&
+                      nonProfitApplicationForm.controls['phoneNumber'].touched">Please enter your phone number without spaces using only numeric characters [0-9] and only the following special characters (, ), -.</small>
+      </div>
+    </div>
+    <div class="row">
+      <label for="preferredContactMethod">Preferred Contact Method*</label>
+      <div id="preferredContactMethod" *ngFor="let c of preferredContactMethods"
+           class="col-sm-4 col-md-4 u-margin-bottom-25 u-padding-right-only-10"> 
+        <label attr.for="{{c.name}}">
+          <input type="checkbox"
+                 id="{{c.name}}"
+                 value="{{c.value}}"
+                 formControlName="preferredContactMethods"
+                 [(ngModel)]="c.selected"/>
+          <span class="u-color-black" [innerHtml]="c.name"></span>
+        </label>
+      </div> 
+    </div>
+    <div class="row">
+      <h2 class="uppercase">Short answers</h2>
+      <p>Please answer the following questions in 1 or 2 sentences.</p>
+    </div>
+    <div *ngFor="let q of shortAnswers; let i = index" 
+         class="row">
+      <div class="col-sm-12 col-md-12 u-margin-bottom-25 u-padding-right-only-10"
+           [ngClass]="{ 
+            'invalid': 
+              !nonProfitApplicationForm.controls['question' + (i + 1)].valid &&
+              nonProfitApplicationForm.controls['question' + (i + 1)].touched
+            }">
+        <label attr.for="{{ 'question' + (i + 1) }}">{{q.question}}</label>
+        <textarea id="{{ 'question' + (i + 1) }}" 
+                  formControlName="{{ 'question' + (i + 1) }}" 
+                  placeholder="{{q.placeholder}}"
+                  [(ngModel)]="q.answer"></textarea>
+        <small *ngIf="!nonProfitApplicationForm.controls['question' + (i + 1)].valid &&
+                      nonProfitApplicationForm.controls['question' + (i + 1)].touched">Required.</small>
+      </div>
+    </div>
+    <div class="row u-text-align-right">
+      <div> 
+        <button class="btn btn-default btn-lg" 
+                type="submit"
+                [disabled]="!nonProfitApplicationForm.valid">Apply</button>
+      </div>
+    </div>
+  </form>
+</div>

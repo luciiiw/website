@@ -1,0 +1,78 @@
+<div [ngStyle]="{ 'padding': '20px 0', 'text-align': 'right' }"
+     class="container">
+  <a (click)="logout()">
+    Logout
+  </a>
+</div>
+<div class="container">
+  <div class="row">
+    <h1 class="lowercase">Students</h1>
+  </div>
+  <div class="row" *ngFor="let status of statuses">
+    <h2 class="uppercase" [innerHtml]="status"></h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Resume</th>
+          <th>Details</th>
+          <th>Actions</th>
+          <th>Change Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let a of studentApplications | async | filter : 'status' : status">
+          <td [innerHtml]="a.firstName + ' ' + a.lastName"></td>
+          <td><a href="{{ a.resumeUrl }}">Resume Link</a></td>
+          <td>
+            <a [routerLink]="['/admin/student-details', a.$key]">Details</a>
+          </td>
+          <td>
+            <button class="btn btn-default btn-sm" (click)="deleteStudentApplication(a.$key, (a.firstName + ' ' + a.lastName))">Delete</button>
+          </td>
+          <td>
+            <select (change)="onStudentStatusSelect($event, a.$key)">
+              <option *ngFor="let i of statuses">{{ i }}</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="container"> 
+  <div class="row">
+    <h1 class="lowercase">nonprofits</h1>
+  </div>
+  <div class="row" *ngFor="let status of statuses">
+    <h2 class="uppercase" [innerHtml]="status"></h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Organization Name</th>
+          <th>Website</th>
+          <th>Details</th>
+          <th>Actions</th>
+          <th>Change Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let a of nonProfitApplications | async | filter : 'status' : status">
+          <td [innerHtml]="a.organizationName"></td>
+          <td><a href="{{ a.website }}">Website</a></td>
+          <td>
+            <a [routerLink]="['/admin/non-profit-details', a.$key]">Details</a>
+          </td>
+          <td>
+            <button class="btn btn-default btn-sm" (click)='deleteNonProfitApplication(a.$key, a.organizationName)'>Delete</button>
+          </td>
+          <td>
+            <select (change)="onNonProfitStatusSelect($event, a.$key)">
+              <option *ngFor="let i of statuses">{{ i }}</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

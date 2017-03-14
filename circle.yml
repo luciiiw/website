@@ -1,4 +1,5 @@
 deployment:
+<<<<<<< HEAD
   production:
     branch: master
     commands:
@@ -6,3 +7,19 @@ deployment:
       - sudo apt-get install ruby-sass 
       - sass public/site.scss public/site.css
       - firebase deploy --token=$FIREBASE_TOKEN --non-interactive
+=======
+  development:
+    branch: feature/firebase
+    commands:
+      - build/dev.sh
+  production:
+    branch: master
+    commands:
+      - build/prod.sh
+test:
+  override:
+    - echo "skipping tests for now"
+machine:
+  node:
+    version: 7.0.0
+>>>>>>> feature/firebase

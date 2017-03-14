@@ -1,0 +1,63 @@
+<div class="container" *ngFor="let a of application | async">
+  <div class="row">
+    <a [routerLink]="['/admin']">Go back</a>
+  </div>
+  <div class="row u-margin-bottom-30">
+    <h1 class="lowercase">{{ a.firstName + ' ' + a.lastName }}</h1>
+  </div>
+  <div class="row">
+    <h2 class="uppercase">Basic information</h2>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12 u-padding-0">
+      <div>
+        <label>Email</label>
+      </div>
+      <a href="mailto:{{a.email}}" [innerHtml]='a.email'></a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-6 u-padding-0">
+      <div>
+        <label>Program</label>
+      </div>
+      <span [innerHtml]='a.program'></span>
+    </div>
+    <div class="col-sm-6 col-md-6 u-padding-0">
+      <div>
+        <label>Academic Year</label>
+      </div>
+      <span [innerHtml]='a.academicYear'></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12 u-padding-0">
+      <div>
+        <label>Resume</label>
+      </div>
+      <a href="{{ a.resumeUrl }}">Link</a>
+    </div>
+  </div>
+  <div class="row">
+    <label>Position preference</label>
+  </div>
+  <div class="row">
+    <ul>
+    <li *ngFor="let position of a.positions">
+        <span [innerHtml]="position"></span>
+    </li> 
+    </ul>
+  </div>
+  <div class="row">
+    <h2 class="uppercase">Short answers</h2>
+  </div>
+  <div *ngFor="let q of a.questions" 
+       class="row u-margin-bottom-30">
+    <div class="col-sm-12 col-md-12 u-padding-0">
+      <div>
+        <label>{{q.question}}</label>
+      </div>
+      <span [innerHtml]="q.answer"></span>
+    </div>
+  </div>
+</div>

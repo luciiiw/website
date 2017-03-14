@@ -1,0 +1,86 @@
+<div class="container" *ngFor="let a of application | async">
+  <div class="row">
+    <a [routerLink]="['/admin']">Go back</a>
+  </div>
+  <div class="row u-margin-bottom-30">
+    <h1 class="lowercase">{{ a.organizationName }}</h1>
+  </div>
+  <div class="row">
+    <h2 class="uppercase">Basic information</h2>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12 u-padding-0">
+      <div>
+        <label>Website</label>
+      </div>
+      <a href='{{ a.website }}'>{{ a.website }}</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-6 u-padding-0">
+      <div>
+        <label>Location</label>
+      </div>
+      <span [innerHtml]='a.location'></span>
+    </div>
+  </div>
+  <div class="row">
+    <h2 class="uppercase">Contact information</h2>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12 u-padding-0">
+      <div>
+        <label>First Name</label>
+      </div>
+      <span [innerHtml]='a.firstName'></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-6 u-padding-0">
+      <div>
+        <label>Last Name</label>
+      </div>
+      <span [innerHtml]='a.lastName'></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12 u-padding-0">
+      <div>
+        <label>Email</label>
+      </div>
+      <a href="mailto:{{a.email}}" [innerHtml]='a.email'></a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12 u-padding-0">
+      <div>
+        <label>Phone Number</label>
+      </div>
+      <span [innerHtml]='a.phoneNumber'></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12 u-padding-0">
+      <div>
+        <label>Preferred Method of Contact</label>
+      </div>
+      <ul>
+        <li *ngFor="let method of a.preferredContactMethods">
+          <span [innerHtml]="method"></span>
+        </li> 
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <h2 class="uppercase">Short answers</h2>
+  </div>
+  <div *ngFor="let q of a.questions" 
+       class="row u-margin-bottom-30">
+    <div class="col-sm-12 col-md-12 u-padding-0">
+      <div>
+        <label>{{q.question}}</label>
+      </div>
+      <span [innerHtml]="q.answer"></span>
+    </div>
+  </div>
+</div>
