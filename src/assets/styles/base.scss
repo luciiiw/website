@@ -55,8 +55,12 @@
 }
 
 .container {
-  width: 70%;
+  width: 90%;
   max-width: 700px;
+
+  @media (min-width: $screen-sm) {
+    width: 70%;
+  }
 }
 
 .container-lg {
@@ -149,9 +153,13 @@ label {
 .emphasis-text {
   font-family: "Fira Sans", sans-serif;
   color: black;
-  font-size: 32px;
+  font-size: 16px;
   font-weight: 300;
-  line-height: 40px;
+  line-height: 1.25em;
+
+  @media (min-width: $screen-sm) {
+    font-size: 32px;
+  }
 }
 
 #section-triangle {
@@ -239,9 +247,11 @@ header {
     position: relative;
     padding: 0 15px 0 15px;
     bottom: 0;
+    top: 40px;
 
     @media (min-width: $screen-sm) {
       bottom: 50px;
+      top: 0;
     }
   }
 
