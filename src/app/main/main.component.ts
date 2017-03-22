@@ -15,7 +15,7 @@ export class MainComponent {
 
   ngAfterViewInit() {
     function triangle() {
-      $('#section-triangle').css("border-left",  ($(window).width() + 100) + "px solid transparent");
+      $('#section-triangle').css("border-left",  $(window).width() + "px solid transparent");
       $('#section-triangle2').css("border-left", $(window).width() + "px solid white");
       $('#section-triangle3').css("border-left", $(window).width() + "px solid transparent");
     }
