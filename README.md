@@ -4,13 +4,13 @@ This repository contains the landing page for UW Blueprint. It can be accessed a
 
 ## Prerequisites
 * `Node.js - 6.9.1+`
-* `angular-cli - 1.0.0-beta.18`
+* `@angular/cli - 1.0.0`
 * `firebase-tools - 3.1.0`
 
 Once you have `Node.js` installed, run:
 
 ```bash
-npm install -g angular-cli
+npm install -g @angular/cli
 npm install -g firebase-tools
 ```
 
@@ -48,7 +48,13 @@ Within the `src/configs` directory, create a file called `secrets.ts` with the c
 
 ```javascript
 export const SECRETS = {
-  FIREBASE_API_KEY: '<API_KEY>'
+  FIREBASE: {
+    API_KEY: 'XXX',
+    AUTH_DOMAIN: 'XXX',
+    DATABASE_URL: 'XXX',
+    STORAGE_BUCKET: 'XXX',
+    MESSAGING_SENDER_ID: 'XXX'
+  }
 }
 ```
 

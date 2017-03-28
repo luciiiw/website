@@ -2,9 +2,10 @@ import { SECRETS } from './secrets';
 
 export const CONFIG = {
   firebaseConfig: {
-    apiKey: SECRETS.FIREBASE_API_KEY,
-    authDomain: "uw-blueprint-dev.firebaseapp.com",
-    databaseURL: "https://uw-blueprint-dev.firebaseio.com",
-    storageBucket: "gs://uw-blueprint-dev.appspot.com"
+    apiKey: SECRETS.FIREBASE.API_KEY,
+    authDomain: SECRETS.FIREBASE.AUTH_DOMAIN,
+    databaseURL: SECRETS.FIREBASE.DATABASE_URL,
+    storageBucket: SECRETS.FIREBASE.STORAGE_BUCKET,
+    messagingSenderId: SECRETS.FIREBASE.MESSAGING_SENDER_ID
   }
 }

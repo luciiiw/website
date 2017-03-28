@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationStart, Router } from '@angular/router';
 
 const LANDING_VIEW_URL = '/';
 
@@ -14,9 +14,10 @@ export class HeaderNavComponent implements AfterViewInit {
   isLandingView: boolean;
 
   constructor(router: Router) {
-    router.events.subscribe(event => {
-      this.isLandingView = LANDING_VIEW_URL === event.url;
-    });
+    router.events
+      .subscribe((e: NavigationStart) => {
+        this.isLandingView = LANDING_VIEW_URL === e.url;
+      });
 
     this.links = [
       {
