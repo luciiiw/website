@@ -1,4 +1,10 @@
 <div class="container">
+  <div class="row u-paddingTop-20">
+    <a [routerLink]="['/nonprofits']" class="u-color-blueprint-blue">
+      UW Blueprint
+    </a>
+    / Non-profit Project Application
+  </div>
   <div class="row u-margin-bottom-15">
     <h1>non-profit project application</h1>
   </div>
@@ -172,7 +178,9 @@
       <div> 
         <button class="btn btn-default btn-lg" 
                 type="submit"
-                [disabled]="!nonProfitApplicationForm.valid">Apply</button>
+                [disabled]="!nonProfitApplicationForm.valid || isLoading">
+                {{isLoading ? 'Applying...' : 'Apply'}}
+        </button>
       </div>
     </div>
   </form>

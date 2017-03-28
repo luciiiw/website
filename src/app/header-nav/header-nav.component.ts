@@ -35,6 +35,11 @@ export class HeaderNavComponent implements AfterViewInit {
       {
         name: 'Team',
         link: '/team'
+      },
+      {
+        name: 'Blog',
+        link: 'https://medium.com/@uwblueprint',
+        target: '_blank'
       }
     ];
   }

@@ -4,6 +4,9 @@
   </div>
   <div class="row u-margin-bottom-30">
     <h1 class="lowercase">{{ a.organizationName }}</h1>
+    <div *ngIf="a.timestamp">
+      Applied on {{a.timestamp | date: 'medium'}}
+    </div>
   </div>
   <div class="row">
     <h2 class="uppercase">Basic information</h2>

@@ -1,4 +1,10 @@
 <div class="container">
+  <div class="row u-paddingTop-20">
+    <a [routerLink]="['/nonprofits']" class="u-color-blueprint-blue">
+      UW Blueprint
+    </a>
+    / Student Application
+  </div>
   <div class="row u-margin-bottom-30">
     <div class="col-md-12 col-sm-12 col-xs-12">
       <div class="row">
@@ -145,7 +151,7 @@
                    id="{{position.name}}"
                    formControlName="positions"
                    [(ngModel)]="position.selected"/>
-            <span class="u-color-black" [innerHtml]="position.name"></span>
+            <span class="u-color-black u-fontSize-90" [innerHtml]="position.name"></span>
           </label>
       </div> 
       <small *ngIf="!studentApplicationForm.controls['positions'].valid &&
@@ -175,7 +181,9 @@
     <div class="row u-padding-right-only-10 u-text-align-right">
       <button class="btn btn-default btn-lg"
               type="submit"
-              [disabled]="!studentApplicationForm.valid">Apply</button>
+              [disabled]="!studentApplicationForm.valid || isLoading">
+              {{isLoading ? 'Applying' : 'Apply'}}
+      </button>
     </div>
   </form>
 </div>

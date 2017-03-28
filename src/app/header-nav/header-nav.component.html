@@ -9,16 +9,23 @@
       </a>
     </li>
     <li class="navigation-section primary u-mobile-hide">
-      <a *ngFor="let link of links"
-         class="nav-link" [routerLink]="[link.link]">
+      <div *ngFor="let link of links" class="u-display-inlineBlock">
+        <a *ngIf="!link.target" class="nav-link" [routerLink]="[link.link]">
           <h2>{{link.name}}</h2>
-      </a>
+        </a>
+        <a *ngIf="link.target" href="{{link.link}}" class="nav-link" target="{{link.target}}">
+          <h2>{{link.name}}</h2>
+        </a>
+      </div>
     </li>
   </ul>
   <div class="hamburgler-menu">
     <ul class="hamburgler-menu-list">
       <li *ngFor="let link of links">
-        <a [routerLink]="[link.link]">
+        <a *ngIf="!link.target" [routerLink]="[link.link]">
+          {{link.name}}
+        </a>
+        <a *ngIf="link.target" href="{{link.link}}" target="{{link.target}}">
           {{link.name}}
         </a>
       </li>

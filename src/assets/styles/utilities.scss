@@ -5,6 +5,14 @@
   display: block;
 }
 
+.u-display-inlineBlock {
+  display: inline-block;
+}
+
+.u-fontSize-90 {
+  font-size: 0.90em;
+}
+
 .u-text-align-right {
   text-align: right;
 }
@@ -69,6 +77,10 @@
 
 .u-padding-bottom-70 {
   padding-bottom: 70px;
+}
+
+.u-paddingTop-20 {
+  padding-top: 20px;
 }
 
 .u-color-baby-blue {

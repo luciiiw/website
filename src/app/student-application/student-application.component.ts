@@ -17,6 +17,7 @@ export class StudentApplicationComponent {
   studentApplicationForm: FormGroup;
   storage;
   resumeUrl: String; 
+  isLoading: Boolean;
 
   positions = [
     { name: 'Project Developer', value: '1', selected: false },
@@ -88,19 +89,27 @@ export class StudentApplicationComponent {
 
     this.applications = af.database.list('studentApplications/');
     this.storage = firebase.storage().ref();
+
+    this.isLoading = false;
   }
 
   submitForm(event) {
+    this.isLoading = true;
+
     this.studentApplicationForm.value.status = 'pending';
     this.studentApplicationForm.value.positions = this.selectedPositions;
     this.studentApplicationForm.value.questions = this.shortAnswers;
     if (this.resumeUrl) {
       this.studentApplicationForm.value.resumeUrl = this.resumeUrl;
     }
+    this.studentApplicationForm.value.timestamp = Date.now();
 
     const promise = this.applications.push(this.studentApplicationForm.value);
     promise
-      .then(_ => this.router.navigate(['students/application/success']));
+      .then(_ => this.router.navigate(['students/application/success']))
+      .catch(() => {
+        this.isLoading = false;
+      });
   }
 
   uploadResume(event) {
