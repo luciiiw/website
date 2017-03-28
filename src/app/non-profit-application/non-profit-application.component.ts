@@ -15,6 +15,7 @@ export class NonProfitApplicationComponent {
   nonProfitApplicationForm: FormGroup;
   applications: FirebaseListObservable<any>;
   storage;
+  isLoading: Boolean;
 
   preferredContactMethods = [
     { name: 'Email', value: '1', selected: false },
@@ -78,15 +79,23 @@ export class NonProfitApplicationComponent {
 
     this.applications = af.database.list('nonProfitApplications/');
     this.storage = firebase.storage().ref();
+
+    this.isLoading = false;
   }
 
   submitForm(event) {
+    this.isLoading = true;
+
     this.nonProfitApplicationForm.value.status = 'pending';
     this.nonProfitApplicationForm.value.preferredContactMethods = this.selectedMethods;
     this.nonProfitApplicationForm.value.questions = this.shortAnswers;
+    this.nonProfitApplicationForm.value.timestamp = Date.now();
 
     const promise = this.applications.push(this.nonProfitApplicationForm.value);
     promise
-      .then(_ => this.router.navigate(['nonprofits/application/success'])); 
+      .then(_ => this.router.navigate(['nonprofits/application/success']))
+      .catch(() => {
+        this.isLoading = false;
+      }); 
   }
 }
