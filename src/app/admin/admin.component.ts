@@ -13,7 +13,7 @@ export class AdminComponent implements OnInit {
   studentApplications: FirebaseListObservable<any>;
   nonProfitApplications: FirebaseListObservable<any>;
 
-  statuses = ['pending', 'rejected', 'interviewed', 'joined'];
+  statuses = ['pending', 'applied', 'selected', 'interviewed', 'offer', 'joined', 'rejected'];
 
   constructor(public af: AngularFire, public router: Router) {
     this.studentApplications = af.database.list('studentApplications/');
