@@ -3,9 +3,9 @@
 This repository contains the landing page for UW Blueprint. It can be accessed at [https://uwblueprint.org](https://uwblueprint.org) and is hosted on Firebase.
 
 ## Prerequisites
-* `Node.js - 6.9.1+`
-* `@angular/cli - 1.0.0`
-* `firebase-tools - 3.1.0`
+* `Node.js - 6.10`
+* `@angular/cli - 1.0.0+`
+* `firebase-tools - 3.1.0+`
 
 Once you have `Node.js` installed, run:
 
@@ -62,11 +62,26 @@ To obtain the API key, either log in to the Firebase console and find it under "
 
 Please **do not** push credentials and secrets to this repository!
 
+## Development Process
+
+The development process that we follow is a relatively simple process.
+
+1. Checkout a new branch off of branch `dev`. The new branch should have a name of `feature/<description>` with a hyphen-separated description (e.g. `feature/new-feature`).
+2. Do development on local development environment on the new feature branch.
+3. Test changes on local development environment.
+4. Commit and push your new change and issue a pull request to branch `dev`. 
+5. Have someone review your change and merge the change into branch `dev`.
+6. Test changes on the staging site.
+7. Issue a pull request to branch `master` from `dev`.
+8. Merge changes to `master`.
+
+Notice that there was no need to manually deploy the site during any of these steps. The site has continuous integration set up using CircleCI. More details on that are below.
+
 ## Deployment
 
 Currently, the project is set up with continuous integration through CircleCI. 
 
-* For the time being, the dev or staging site is deployed when a new commit is pushed to the `feature/firebase` branch. The build script `build/dev.sh` will be executed. 
+* For the time being, the dev or staging site is deployed when a new commit is pushed to the `dev` branch. The build script `build/dev.sh` will be executed. 
 * The production site is deployed when a new commit is pushed to the `master` branch. The build script `build/prod.sh` will be executed.
 
 There is a slight hack in the build scripts where the `firebase` package is installed manually and then `firebase.d.ts` is removed from the package to avoid errors caused by duplicate identifiers.
