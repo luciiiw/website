@@ -25,7 +25,7 @@
       <tbody>
         <tr *ngFor="let a of studentApplications | async | filter : 'status' : status">
           <td [innerHtml]="a.firstName + ' ' + a.lastName"></td>
-          <td><a href="{{ a.resumeUrl }}">Resume Link</a></td>
+          <td><a *ngIf="a.resumeUrl" href="{{ a.resumeUrl }}">Resume Link</a></td>
           <td>
             <a [routerLink]="['/admin/student-details', a.$key]">Details</a>
           </td>
@@ -61,7 +61,7 @@
       <tbody>
         <tr *ngFor="let a of nonProfitApplications | async | filter : 'status' : status">
           <td [innerHtml]="a.organizationName"></td>
-          <td><a href="{{ a.website }}">Website</a></td>
+          <td><a [attr.href]="a.website">Website</a></td>
           <td>
             <a [routerLink]="['/admin/non-profit-details', a.$key]">Details</a>
           </td>
