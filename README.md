@@ -88,8 +88,23 @@ There is a slight hack in the build scripts where the `firebase` package is inst
 
 The `firebase` package needs to be installed as the project does not compile without it on CircleCI's instances. This is still under investgation.  
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Bug Reporting
+
+To maintain service and code health, we need to make sure that we report all bugs and fix them in a timely manner. Here is the process for submitting a bug report once a potential bug has been spotted:
+
+1. Verify the bug by making sure it is reproduceable.
+2. Once verified, [create an issue](https://github.com/uwblueprint/website/issues/new) with a suitable title and **detailed** steps to reproduce the bug in the comments.
+
+### Notes
+
+* Please **do not** submit an issue until the bug is verified. It is important to make sure that the issues list well maintained to ensure that we can organize and correctly prioritize the tasks to complete.
+* If you must submit a bug report  without a verified bug, add a tag of [Unverified] at the front and add the `low priority` label. 
+
+## All Other Issues
+
+We use Github issues to keep track of things other than bugs such as feature requests, tasks, and design. It is encouraged that we create an issue for these types of changes so that it is easy to track and we can easily facilitate discussion regarding the issue. 
+
+Please be mindful when you create the issue and understand that we have very limited resources.
 
 ## Code scaffolding
 
