@@ -38,7 +38,7 @@
       <div>
         <label>Resume</label>
       </div>
-      <a href="{{ a.resumeUrl }}">Link</a>
+      <a *ngIf="a.resumeUrl" href="{{ a.resumeUrl }}">Link</a>
     </div>
   </div>
   <div class="row">
