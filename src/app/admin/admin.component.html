@@ -15,6 +15,7 @@
     <table class="table">
       <thead>
         <tr>
+          <th>#</th>
           <th>Name</th>
           <th>Resume</th>
           <th>Details</th>
@@ -23,7 +24,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let a of studentApplications | async | filter : 'status' : status">
+        <tr *ngFor="let i = index; let a of studentApplications | async | filter : 'status' : status">
+          <td [innerHtml]="i + 1"></td>
           <td [innerHtml]="a.firstName + ' ' + a.lastName"></td>
           <td><a *ngIf="a.resumeUrl" href="{{ a.resumeUrl }}">Resume Link</a></td>
           <td>
@@ -51,6 +53,7 @@
     <table class="table">
       <thead>
         <tr>
+          <th>#</th>
           <th>Organization Name</th>
           <th>Website</th>
           <th>Details</th>
@@ -59,7 +62,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let a of nonProfitApplications | async | filter : 'status' : status">
+        <tr *ngFor="let i = index; let a of nonProfitApplications | async | filter : 'status' : status">
+          <td [innerHtml]="i + 1"></td>
           <td [innerHtml]="a.organizationName"></td>
           <td><a [attr.href]="a.website">Website</a></td>
           <td>
