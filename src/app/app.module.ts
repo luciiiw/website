@@ -59,6 +59,7 @@ import { TeamPageComponent } from './team-page/team-page.component';
       },
       { path: 'admin/student-details/:key', component: StudentDetailsComponent },
       { path: 'admin/non-profit-details/:key', component: NonProfitDetailsComponent },
+      { path: 'join', redirectTo: 'students/application', pathMatch: 'full' },
       { 
         path: 'login', 
         component: LoginComponent,
