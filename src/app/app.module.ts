@@ -53,15 +53,17 @@ import { TeamPageComponent } from './team-page/team-page.component';
     RouterModule.forRoot([
       { path: '', component: MainComponent },
       {
-        path: 'admin', 
+        path: 'admin',
         component: AdminComponent,
         canActivate: [AuthGuardService]
       },
       { path: 'admin/student-details/:key', component: StudentDetailsComponent },
       { path: 'admin/non-profit-details/:key', component: NonProfitDetailsComponent },
-      { path: 'join', redirectTo: 'students/application', pathMatch: 'full' },
-      { 
-        path: 'login', 
+      // Redirect join to home page for now since application is closed
+      // { path: 'join', redirectTo: 'students/application', pathMatch: 'full' },
+      { path: 'join', redirectTo: '/', pathMatch: 'full' },
+      {
+        path: 'login',
         component: LoginComponent,
         canActivate: [NoAuthGuardService]
       },
@@ -70,7 +72,9 @@ import { TeamPageComponent } from './team-page/team-page.component';
       { path: 'nonprofits/application/success', component: ApplicationSuccessComponent },
       { path: 'projects', component: ProjectsPageComponent },
       { path: 'students', component: StudentsPageComponent },
-      { path: 'students/application', component: StudentApplicationComponent },
+      // Redirect students/application to home page since it's closed for now
+      // { path: 'students/application', component: StudentApplicationComponent },
+      { path: 'students/application', redirectTo: '/', pathMatch: 'full'},
       { path: 'students/application/success', component: ApplicationSuccessComponent },
       { path: 'team', component: TeamPageComponent },
     ])
