@@ -3,9 +3,9 @@
 This repository contains the landing page for UW Blueprint. It can be accessed at [https://uwblueprint.org](https://uwblueprint.org) and is hosted on Firebase.
 
 ## Prerequisites
-* `Node.js - 6.9.1+`
-* `@angular/cli - 1.0.0`
-* `firebase-tools - 3.1.0`
+* `Node.js - 6.10`
+* `@angular/cli - 1.0.0+`
+* `firebase-tools - 3.1.0+`
 
 Once you have `Node.js` installed, run:
 
@@ -62,19 +62,49 @@ To obtain the API key, either log in to the Firebase console and find it under "
 
 Please **do not** push credentials and secrets to this repository!
 
+## Development Process
+
+The development process that we follow is a relatively simple process.
+
+1. Checkout a new branch off of branch `dev`. The new branch should have a name of `feature/<description>` with a hyphen-separated description (e.g. `feature/new-feature`).
+2. Do development on local development environment on the new feature branch.
+3. Test changes on local development environment.
+4. Commit and push your new change and issue a pull request to branch `dev`. 
+5. Have someone review your change and merge the change into branch `dev`.
+6. Test changes on the staging site.
+7. Issue a pull request to branch `master` from `dev`.
+8. Merge changes to `master`.
+
+Notice that there was no need to manually deploy the site during any of these steps. The site has continuous integration set up using CircleCI. More details on that are below.
+
 ## Deployment
 
 Currently, the project is set up with continuous integration through CircleCI. 
 
-* For the time being, the dev or staging site is deployed when a new commit is pushed to the `feature/firebase` branch. The build script `build/dev.sh` will be executed. 
+* For the time being, the dev or staging site is deployed when a new commit is pushed to the `dev` branch. The build script `build/dev.sh` will be executed. 
 * The production site is deployed when a new commit is pushed to the `master` branch. The build script `build/prod.sh` will be executed.
 
 There is a slight hack in the build scripts where the `firebase` package is installed manually and then `firebase.d.ts` is removed from the package to avoid errors caused by duplicate identifiers.
 
 The `firebase` package needs to be installed as the project does not compile without it on CircleCI's instances. This is still under investgation.  
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Bug Reporting
+
+To maintain service and code health, we need to make sure that we report all bugs and fix them in a timely manner. Here is the process for submitting a bug report once a potential bug has been spotted:
+
+1. Verify the bug by making sure it is reproduceable.
+2. Once verified, [create an issue](https://github.com/uwblueprint/website/issues/new) with a suitable title and **detailed** steps to reproduce the bug in the comments.
+
+### Notes
+
+* Please **do not** submit an issue until the bug is verified. It is important to make sure that the issues list well maintained to ensure that we can organize and correctly prioritize the tasks to complete.
+* If you must submit a bug report  without a verified bug, add a tag of [Unverified] at the front and add the `low priority` label. 
+
+## All Other Issues
+
+We use Github issues to keep track of things other than bugs such as feature requests, tasks, and design. It is encouraged that we create an issue for these types of changes so that it is easy to track and we can easily facilitate discussion regarding the issue. 
+
+Please be mindful when you create the issue and understand that we have very limited resources.
 
 ## Code scaffolding
 
